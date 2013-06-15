@@ -1,13 +1,6 @@
 var express = require('express')
   , env = process.env.NODE_ENV || 'development'
   , config = require('./config/config')[env]
-  , modelsPath = __dirname + '/app/models'
-
-
-// Bootstrap models
-require('fs').readdirSync(modelsPath).forEach(function (file) {
-  require(modelsPath+'/'+file)
-})
 
 var app = express()
 
