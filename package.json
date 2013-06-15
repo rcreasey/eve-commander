@@ -1,5 +1,9 @@
 {
   "name": "eve-commander",
+  "repository": {
+    "type": "git",
+    "url": "  https://github.com/rcreasey/eve-commander.git"
+  },
   "version": "0.0.1",
   "private": true,
   "engines": {
