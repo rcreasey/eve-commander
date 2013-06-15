@@ -1,0 +1,296 @@
+extends layout
+
+block context
+  h3 Simple Reactions
+  table#simple-reactions.table.table-striped.table-bordered
+    thead
+      tr
+        td Icon
+        td Value
+        td Reaction
+        td Icon
+        td Value
+        td Component
+        td Icon
+        td Value
+        td Component
+    tbody
+
+  :coffeescript
+    $(document).ready ->
+      regions = jita:
+        id: 10000002
+
+      reactions = [
+        name: "Sulfuric Acid"
+        id: 16661
+        icon: "sreaction.png"
+        components: [
+          name: "Evaporite Deposits"
+          id: 16635
+          icon: "evap_deposits.png"
+        ,
+          name: "Atmospheric Gases"
+          id: 16634
+          icon: "atmos_gases.png"
+        ]
+      ,
+        name: "Silicon Diborite"
+        id: 16658
+        icon: "sreaction.png"
+        components: [
+          name: "Evaporite Deposits"
+          id: 16635
+          icon: "evap_deposits.png"
+        ,
+          name: "Silicates"
+          id: 16636
+          icon: "silicates.png"
+        ]
+      ,
+        name: "Ceramic Powder"
+        id: 16660
+        icon: "sreaction.png"
+        components: [
+          name: "Evaporite Deposits"
+          id: 16635
+          icon: "evap_deposits.png"
+        ,
+          name: "Silicates"
+          id: 16636
+          icon: "silicates.png"
+        ]
+      ,
+        name: "Carbon Polymers"
+        id: 16659
+        icon: "sreaction.png"
+        components: [
+          name: "Hydrocarbons"
+          id: 16633
+          icon: "hydrocarbons.png"
+        ,
+          name: "Silicates"
+          id: 16636
+          icon: "silicates.png"
+        ]
+      ,
+        name: "Titanium Chromide"
+        id: 16654
+        icon: "sreaction.png"
+        components: [
+          name: "Titanium"
+          id: 16638
+          icon: "titanium.png"
+        ,
+          name: "Chromium"
+          id: 16641
+          icon: "chromium.png"
+        ]
+      ,
+        name: "Crystallite Alloy"
+        id: 16655
+        icon: "sreaction.png"
+        components: [
+          name: "Cadmium"
+          id: 16643
+          icon: "cadmium.png"
+        ,
+          name: "Cobalt"
+          id: 16640
+          icon: "cobalt.png"
+        ]
+      ,
+        name: "Fernite Alloy"
+        id: 16656
+        icon: "sreaction.png"
+        components: [
+          name: "Vanadium"
+          id: 16642
+          icon: "vanadium.png"
+        ,
+          name: "Scandium"
+          id: 16639
+          icon: "scandium.png"
+        ]
+      ,
+        name: "Rolled Tungsten Alloy"
+        id: 16657
+        icon: "sreaction.png"
+        components: [
+          name: "Platinum"
+          id: 16644
+          icon: "platinum.png"
+        ,
+          name: "Tungsten"
+          id: 16637
+          icon: "tungsten.png"
+        ]
+      ,
+        name: "Platinum Technite"
+        id: 16662
+        icon: "sreaction.png"
+        components: [
+          name: "Technetium"
+          id: 16649
+          icon: "technetium.png"
+        ,
+          name: "Platinum"
+          id: 16644
+          icon: "platinum.png"
+        ]
+      ,
+        name: "Caesarium Cadmide"
+        id: 16663
+        icon: "sreaction.png"
+        components: [
+          name: "Caesium"
+          id: 16647
+          icon: "caesium.png"
+        ,
+          name: "Cadmium"
+          id: 16643
+          icon: "cadmium.png"
+        ]
+      ,
+        name: "Solerium"
+        id: 16664
+        icon: "sreaction.png"
+        components: [
+          name: "Caesium"
+          id: 16647
+          icon: "caesium.png"
+        ,
+          name: "Chromium"
+          id: 16641
+          icon: "chromium.png"
+        ]
+      ,
+        name: "Hexite"
+        id: 16665
+        icon: "sreaction.png"
+        components: [
+          name: "Platinum"
+          id: 16644
+          icon: "platinum.png"
+        ,
+          name: "Chromium"
+          id: 16641
+          icon: "chromium.png"
+        ]
+      ,
+        name: "Hyperflurite"
+        id: 16666
+        icon: "sreaction.png"
+        components: [
+          name: "Platinum"
+          id: 16644
+          icon: "platinum.png"
+        ,
+          name: "Chromium"
+          id: 16641
+          icon: "chromium.png"
+        ]
+      ,
+        name: "Neo Mercurite"
+        id: 16667
+        icon: "sreaction.png"
+        components: [
+          name: "Neodymium"
+          id: 16651
+          icon: "neodymium.png"
+        ,
+          name: "Mercury"
+          id: 16646
+          icon: "mercury.png"
+        ]
+      ,
+        name: "Dysporite"
+        id: 16668
+        icon: "sreaction.png"
+        components: [
+          name: "Cadmium"
+          id: 16643
+          icon: "cadmium.png"
+        ,
+          name: "Mercury"
+          id: 16646
+          icon: "mercury.png"
+        ]
+      ,
+        name: "Ferrofluid"
+        id: 16669
+        icon: "sreaction.png"
+        components: [
+          name: "Cadmium"
+          id: 16643
+          icon: "cadmium.png"
+        ,
+          name: "Hafnium"
+          id: 16648
+          icon: "hafnium.png"
+        ]
+      ,
+        name: "Thulium Hafnite"
+        id: 33336
+        icon: "sreaction.png"
+        components: [
+          name: "Thulium"
+          id: 16653
+          icon: "thulium.png"
+        ,
+          name: "Hafnium"
+          id: 16648
+          icon: "hafnium.png"
+        ]
+      ,
+        name: "Promethium Mercurite"
+        id: 33337
+        icon: "sreaction.png"
+        components: [
+          name: "Promethium"
+          id: 16652
+          icon: "promethium.png"
+        ,
+          name: "Mercury"
+          id: 16646
+          icon: "mercury.png"
+        ]
+      ]
+      component_ids = $.map(reactions, (reaction) ->
+        $.map reaction.components, (component) ->
+          component.id
+
+      )
+      component_ids = $.map(component_ids, (component) ->
+        "typeid=" + component
+      ).join("&")
+      reaction_ids = $.map(reactions, (reaction) ->
+        "typeid=" + reaction.id
+      ).join("&")
+      type_ids = [reaction_ids, component_ids].join("&")
+      data_url = "http://api.eve-central.com/api/marketstat?" + "regionlimit=" + regions["jita"].id + "&" + type_ids
+      $.ajax
+        type: "GET"
+        url: data_url
+        dataType: "xml"
+        success: (data) ->
+          $.each reactions, (index, reaction) ->
+            reaction_value = $(data).find("evec_api > marketstat > type#" + reaction.id + " > buy > max").text()
+            sell = (reaction_value * 200).toFixed(2)
+            row = $("<tr>")
+            row.append $("<td>").append($("<img>").attr("src", "http://tarrif.net/eve/img/icons/" + reaction.icon).attr("height", "32").attr("width", "32"))
+            row.append $("<td>").text(sell)
+            row.append $("<td>").text(reaction.name)
+            buy = 0.0
+            $.each reaction.components, (index, component) ->
+              component_value = $(data).find("evec_api > marketstat > type#" + component.id + " > sell > max").text()
+              buy = +(component_value * 100)
+              row.append $("<td>").append($("<img>").attr("src", "http://tarrif.net/eve/img/icons/" + component.icon).attr("height", "32").attr("width", "32"))
+              row.append $("<td>").append((component_value * 100).toFixed(2))
+              row.append $("<td>").text(component.name)
+
+            row.attr "class", "success"  if sell > buy
+            $("#simple-reactions tbody").append row
+
+
+

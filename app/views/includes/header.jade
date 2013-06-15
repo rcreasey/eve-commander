@@ -8,5 +8,12 @@ div.navbar.navbar-inverse.navbar-fixed-top
       a.brand(href='/') EVE Commander
       div.nav-collapse.collapse
         ul.nav
-          li
-            
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown') Guides
+              b.caret
+            ul.dropdown-menu
+              li.nav-header Reactions
+              li
+                a(href='/reactions/simple') Simple
+
+

@@ -1,0 +1,165 @@
+[
+  {
+      "name": "Sulfuric Acid"
+    , "id": 16661
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Evaporite Deposits", "id": 16635, "icon": "evap_deposits.png"}
+      , {"name": "Atmospheric Gases", "id": 16634, "icon": "atmos_gases.png"}
+    ]
+  },
+  {
+      "name": "Silicon Diborite"
+    , "id": 16658
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Evaporite Deposits", "id": 16635, "icon": "evap_deposits.png"}
+      , {"name": "Silicates", "id": 16636, "icon": "silicates.png"}
+    ]
+  },
+  {
+      "name": "Ceramic Powder"
+    , "id": 16660
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Evaporite Deposits", "id": 16635, "icon": "evap_deposits.png"}
+      , {"name": "Silicates", "id": 16636, "icon": "silicates.png"}
+    ]
+  },  
+  {
+      "name": "Carbon Polymers"
+    , "id": 16659
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Hydrocarbons", "id": 16633, "icon": "hydrocarbons.png"}
+      , {"name": "Silicates", "id": 16636, "icon": "silicates.png"}
+    ]
+  },
+  {
+      "name": "Titanium Chromide"
+    , "id": 16654
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Titanium", "id": 16638, "icon": "titanium.png"}
+      , {"name": "Chromium", "id": 16641, "icon": "chromium.png"}
+    ]
+  },        
+  {
+      "name": "Crystallite Alloy"
+    , "id": 16655
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Cadmium", "id": 16643, "icon": "cadmium.png"}
+      , {"name": "Cobalt", "id": 16640, "icon": "cobalt.png"}
+    ]
+  },       
+  {
+      "name": "Fernite Alloy"
+    , "id": 16656
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Vanadium", "id": 16642, "icon": "vanadium.png"}
+      , {"name": "Scandium", "id": 16639, "icon": "scandium.png"}
+    ]
+  },
+            {
+      "name": "Rolled Tungsten Alloy"
+    , "id": 16657
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Platinum", "id": 16644, "icon": "platinum.png"}
+      , {"name": "Tungsten", "id": 16637, "icon": "tungsten.png"}
+    ]
+  },
+  {
+      "name": "Platinum Technite"
+    , "id": 16662
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Technetium", "id": 16649, "icon": "technetium.png"}
+      , {"name": "Platinum", "id": 16644, "icon": "platinum.png"}
+    ]
+  },
+  {
+      "name": "Caesarium Cadm"id"e"
+    , "id": 16663
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Caesium", "id": 16647, "icon": "caesium.png"}
+      , {"name": "Cadmium", "id": 16643, "icon": "cadmium.png"}
+    ]
+  },
+  {
+      "name": "Solerium"
+    , "id": 16664
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Caesium", "id": 16647, "icon": "caesium.png"}
+      , {"name": "Chromium", "id": 16641, "icon": "chromium.png"}
+    ]
+  },
+  {
+      "name": "Hexite"
+    , "id": 16665
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Platinum", "id": 16644, "icon": "platinum.png"}
+      , {"name": "Chromium", "id": 16641, "icon": "chromium.png"}
+    ]
+  },
+  {
+      "name": "Hyperflurite"
+    , "id": 16666
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Platinum", "id": 16644, "icon": "platinum.png"}
+      , {"name": "Chromium", "id": 16641, "icon": "chromium.png"}
+    ]
+  },
+  {
+      "name": "Neo Mercurite"
+    , "id": 16667
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Neodymium", "id": 16651, "icon": "neodymium.png"}
+      , {"name": "Mercury", "id": 16646, "icon": "mercury.png"}
+    ]
+  },
+  {
+      "name": "Dysporite"
+    , "id": 16668
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Cadmium", "id": 16643, "icon": "cadmium.png"}
+      , {"name": "Mercury", "id": 16646, "icon": "mercury.png"}
+    ]
+  },
+
+  {
+      "name": "Ferrofluid"
+    , "id": 16669
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Cadmium", "id": 16643, "icon": "cadmium.png"}
+      , {"name": "Hafnium", "id": 16648, "icon": "hafnium.png"}
+    ]
+  },
+  {
+      "name": "Thulium Hafnite"
+    , "id": 33336
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Thulium", "id": 16653, "icon": "thulium.png"}
+      , {"name": "Hafnium", "id": 16648, "icon": "hafnium.png"}
+    ]
+  },
+  {
+      "name": "Promethium Mercurite"
+    , "id": 33337
+    , "icon": "sreaction.png"
+    , "components": [
+        {"name": "Promethium", "id": 16652, "icon": "promethium.png"}
+      , {"name": "Mercury", "id": 16646, "icon": "mercury.png"}
+    ]
+  }
+];
