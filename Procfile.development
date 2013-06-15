@@ -1,0 +1,2 @@
+web: node --debug server.js NODE_ENV=development
+debugger: node-inspector
