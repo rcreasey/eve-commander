@@ -5,5 +5,5 @@ exports.profit = function (req, res) {
 
 // GET /mining/volume
 exports.volume = function (req, res) {
-  res.render('Ore/volume', {title: 'Ore Yield By Volume'})
+  res.render('ore/volume', {title: 'Ore Yield By Volume'})
 }
