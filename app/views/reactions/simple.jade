@@ -289,7 +289,10 @@ block context
               row.append $("<td>").append((component_value * 100).toFixed(2))
               row.append $("<td>").text(component.name)
 
-            row.attr "class", "success"  if sell > buy
+            if sell > buy
+              row.attr "class", "success"  if sell > buy
+
+
             $("#simple-reactions tbody").append row
 
 

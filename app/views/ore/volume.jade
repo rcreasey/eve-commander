@@ -2,9 +2,17 @@ extends layout
 
 block context
   h3 #{title}
+  
+  .btn-group
+    button#toggle_ores.btn(onclick="$('tbody tr.ore-class').nextUntil('tr.ore-class').toggle()") Ore Types
+      :coffeescript
+        toggle_ores = ->
+          $('tbody tr.ore-class').nextUntil('tr.ore-class').toggle()
 
-  //- $('tbody tr.ore-class').nextUntil('tr.ore-class').toggle() //
-  table.table.table-bordered.table-condensed.table-ore
+        $(document).ready ->
+          toggle_ores()
+
+  table.table.table-condensed.table-ore
     thead
       tr
         th Ore
@@ -21,12 +29,10 @@ block context
     tbody
       //- Veldspar //
       tr.ore-class
-        td
-          strong Veldspar
+        th Veldspar
         td 333
         td 0.1
-        td
-          strong.text-success 30.03
+        td.optimal 30.03
         td 0.00
         td 0.00 
         td 0.00 
@@ -35,11 +41,10 @@ block context
         td 0.00 
         td 0.00 
       tr
-        td Concentrated Veldspar
+        th Concentrated Veldspar
         td &#160;
         td &#160;
-        td
-          strong.text-success 31.53
+        td.optimal 31.53
         td 0.00
         td 0.00 
         td 0.00 
@@ -48,11 +53,10 @@ block context
         td 0.00 
         td 0.00 
       tr
-        td Dense Veldspar
+        th Dense Veldspar
         td &#160;
         td &#160;
-        td
-          strong.text-success 33.03
+        td.optimal 33.03
         td 0.00
         td 0.00 
         td 0.00 
@@ -62,13 +66,11 @@ block context
         td 0.00 
       //- Scordite //
       tr.ore-class
-        td
-          strong Scordite
+        th Scordite
         td 333
         td 0.2
         td 16.68
-        td 
-          strong.text-success 8.33
+        td.optimal 8.33
         td 0.00 
         td 0.00 
         td 0.00 
@@ -76,12 +78,11 @@ block context
         td 0.00 
         td 0.00 
       tr
-        td Concentrated Scordite
+        th Concentrated Scordite
         td &#160;
         td &#160;
         td 17.51
-        td 
-          strong.text-success 8.74
+        td.optimal 8.74
         td 0.00 
         td 0.00 
         td 0.00 
@@ -89,12 +90,11 @@ block context
         td 0.00 
         td 0.00 
       tr
-        td Massive Scordite
+        th Massive Scordite
         td &#160;
         td &#160;
         td 18.34
-        td 
-          strong.text-success 9.16
+        td.optimal 9.16
         td 0.00 
         td 0.00 
         td 0.00 
@@ -103,8 +103,7 @@ block context
         td 0.00 
       //- Pyroxeres //
       tr.ore-class
-        td
-          strong Pyroxeres
+        th Pyroxeres
         td 333
         td 0.3
         td 8.45
@@ -116,7 +115,7 @@ block context
         td 0.00 
         td 0.00 
       tr
-        td Solid Pyroxeres
+        th Solid Pyroxeres
         td &#160;
         td &#160;
         td 8.87
@@ -128,7 +127,7 @@ block context
         td 0.00 
         td 0.00 
       tr
-        td Viscous Pyroxeres
+        th Viscous Pyroxeres
         td &#160;
         td &#160;
         td 9.29
@@ -141,40 +140,36 @@ block context
         td 0.00 
       //- Plagioclase //
       tr.ore-class
-        td
-          strong Plagioclase
+        th Plagioclase
         td 333
         td 0.4
         td 2.20
         td 4.39
-        td 
-          strong.text-success 2.20 
+        td.optimal 2.20 
         td 0.00 
         td 0.00 
         td 0.00 
         td 0.00 
         td 0.00 
       tr
-        td Azure Plagioclase
+        th Azure Plagioclase
         td &#160;
         td &#160;
         td 2.31
         td 4.61
-        td 
-          strong.text-success 2.31
+        td.optimal 2.31
         td 0.00 
         td 0.00 
         td 0.00 
         td 0.00 
         td 0.00 
       tr
-        td Rich Plagioclase
+        th Rich Plagioclase
         td &#160;
         td &#160;
         td 2.42
         td 4.83
-        td 
-          strong.text-success 2.42
+        td.optimal 2.42
         td 0.00 
         td 0.00 
         td 0.00 
@@ -182,49 +177,44 @@ block context
         td 0.00 
       //- Omber //
       tr.ore-class
-        td
-          strong Omber
+        th Omber
         td 500
         td 0.6
         td 1.02
         td 0.41
         td 0.00
-        td 
-          strong.text-success 1.02
+        td.optimal 1.02
         td 0.00
         td 0.00
         td 0.00
         td 0.00
       tr
-        td Silvery Omber
+        th Silvery Omber
         td &#160;
         td &#160;
         td 1.07
         td 0.43
         td 0.00
-        td 
-          strong.text-success 1.07
+        td.optimal 1.07
         td 0.00
         td 0.00
         td 0.00
         td 0.00
       tr
-        td Golden Omber
+        th Golden Omber
         td &#160;
         td &#160;
         td 1.13
         td 0.45
         td 0.00
-        td 
-          strong.text-success 1.13
+        td.optimal 1.13
         td 0.00
         td 0.00
         td 0.00
         td 0.00
       //- Kernite //
       tr.ore-class
-        td
-          strong Kernite
+        th Kernite
         td 400
         td 1.2
         td 0.80
@@ -236,7 +226,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Luminous Kernite
+        th Luminous Kernite
         td &#160;
         td &#160;
         td 0.84
@@ -248,7 +238,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Fiery Kernite
+        th Fiery Kernite
         td &#160;
         td &#160;
         td 0.88
@@ -261,8 +251,7 @@ block context
         td 0.00
       //- Jaspet //
       tr.ore-class
-        td
-          strong Jaspet
+        th Jaspet
         td 500
         td 2
         td 0.26
@@ -274,7 +263,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Pure Jaspet
+        th Pure Jaspet
         td &#160;
         td &#160;
         td 0.27
@@ -286,7 +275,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Pristine Jaspet
+        th Pristine Jaspet
         td &#160;
         td &#160;
         td 0.28
@@ -299,49 +288,44 @@ block context
         td 0.00
       //- Hemorphite //
       tr.ore-class
-        td
-          strong Hemorphite
+        th Hemorphite
         td 500
         td 3
         td 0.43
         td 0.17
         td 0.00
         td 0.14
-        td
-          strong.text-success 0.28
+        td.optimal 0.28
         td 0.02
         td 0.00
         td 0.00
       tr
-        td Vivid Hemorphite
+        th Vivid Hemorphite
         td &#160;
         td &#160;
         td 0.46
         td 0.18
         td 0.00
         td 0.15
-        td
-          strong.text-success 0.30
+        td.optimal 0.30
         td 0.02
         td 0.00
         td 0.00
       tr
-        td Radiant Hemorphite
+        th Radiant Hemorphite
         td &#160;
         td &#160;
         td 0.48
         td 0.19
         td 0.00
         td 0.16
-        td
-          strong.text-success 0.31
+        td.optimal 0.31
         td 0.02
         td 0.00
         td 0.00
       //- Hedbergite //
       tr.ore-class
-        td
-          strong Hedbergite
+        th Hedbergite
         td 500
         td 3
         td 0.00
@@ -353,7 +337,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Vitric Hedbergite
+        th Vitric Hedbergite
         td &#160;
         td &#160;
         td 0.00
@@ -365,7 +349,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Glazed Hedbergite
+        th Glazed Hedbergite
         td &#160;
         td &#160;
         td 0.00
@@ -378,8 +362,7 @@ block context
         td 0.00
       //- Gneiss //
       tr.ore-class
-        td
-          strong Gneiss
+        th Gneiss
         td 400
         td 5
         td 1.85
@@ -391,7 +374,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Iridescent Gneiss
+        th Iridescent Gneiss
         td &#160;
         td &#160;
         td 1.94
@@ -403,7 +386,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Prismatic Gneiss
+        th Prismatic Gneiss
         td &#160;
         td &#160;
         td 2.04
@@ -416,8 +399,7 @@ block context
         td 0.00
       //- Ochre //
       tr.ore-class
-        td
-          strong Dark Ochre
+        th Dark Ochre
         td 400
         td 8
         td 7.97 
@@ -429,7 +411,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Onyx Ochre
+        th Onyx Ochre
         td &#160;
         td &#160;
         td 8.37
@@ -441,7 +423,7 @@ block context
         td 0.00
         td 0.00
       tr
-        td Obsidian Ochre
+        th Obsidian Ochre
         td &#160;
         td &#160;
         td 0.00
@@ -454,8 +436,7 @@ block context
         td 0.00
       //- Crokite //
       tr.ore-class
-        td
-          strong Crokite
+        th Crokite
         td 250
         td 16
         td 9.50
@@ -463,12 +444,11 @@ block context
         td 0.00
         td 0.00
         td 0.08
-        td 
-          strong.text-success 0.17
+        td.optimal 0.17
         td 0.00
         td 0.00
       tr
-        td Sharp Crokite
+        th Sharp Crokite
         td &#160;
         td &#160;
         td 9.98
@@ -476,12 +456,11 @@ block context
         td 0.00
         td 0.00
         td 0.09
-        td 
-          strong.text-success 0.17
+        td.optimal 0.17
         td 0.00
         td 0.00
       tr
-        td Crystalline Crokite
+        th Crystalline Crokite
         td &#160;
         td &#160;
         td 10.45
@@ -489,14 +468,12 @@ block context
         td 0.00
         td 0.00
         td 0.09
-        td 
-          strong.text-success 0.18
+        td.optimal 0.18
         td 0.00
         td 0.00
       //- Spodumain //
       tr.ore-class
-        td
-          strong Spodumain
+        th Spodumain
         td 250
         td 16
         td 17.75
@@ -508,7 +485,7 @@ block context
         td 0.04
         td 0.00
       tr
-        td Bright Spodumain
+        th Bright Spodumain
         td &#160;
         td &#160;
         td 18.64
@@ -520,7 +497,7 @@ block context
         td 0.04
         td 0.00
       tr
-        td Gleaming Spodumain
+        th Gleaming Spodumain
         td &#160;
         td &#160;
         td 19.53
@@ -533,8 +510,7 @@ block context
         td 0.00
       //- Bistot //
       tr.ore-class
-        td
-          strong Bistot
+        th Bistot
         td 200
         td 16
         td 0.00
@@ -546,7 +522,7 @@ block context
         td 0.05
         td 0.00
       tr
-        td Triclinic Bistot
+        th Triclinic Bistot
         td &#160;
         td &#160;
         td 0.00
@@ -558,7 +534,7 @@ block context
         td 0.06
         td 0.00
       tr
-        td Monoclinic Bistot
+        th Monoclinic Bistot
         td &#160;
         td &#160;
         td 0.00
@@ -571,8 +547,7 @@ block context
         td 0.00
       //- Arkanor //
       tr.ore-class
-        td
-          strong Arkanor
+        th Arkanor
         td 200
         td 16
         td 3.13
@@ -581,11 +556,10 @@ block context
         td 0.00
         td 0.00
         td 0.05
-        td 
-          strong.text-success 0.10
+        td.optimal 0.10
         td 0.00
       tr
-        td Crimson Arkonor
+        th Crimson Arkonor
         td &#160;
         td &#160;
         td 3.28
@@ -594,11 +568,10 @@ block context
         td 0.00
         td 0.00
         td 0.05
-        td 
-          strong.text-success 0.11
+        td.optimal 0.11
         td 0.00
       tr
-        td Prime Arkonor
+        th Prime Arkonor
         td &#160;
         td &#160;
         td 3.44
@@ -607,13 +580,11 @@ block context
         td 0.00
         td 0.00
         td 0.06
-        td 
-          strong.text-success 0.11
+        td.optimal 0.11
         td 0.00
       //- Mercoxit //
       tr.ore-class
-        td
-          strong Mercoxit
+        th Mercoxit
         td 250
         td 40
         td 0.00
@@ -623,10 +594,9 @@ block context
         td 0.00
         td 0.00
         td 0.00
-        td 
-          strong.text-success 0.05
+        td.optimal 0.05
       tr
-        td Magma Mercoxit
+        th Magma Mercoxit
         td &#160;
         td &#160;
         td 0.00
@@ -636,10 +606,9 @@ block context
         td 0.00
         td 0.00
         td 0.00
-        td 
-          strong.text-success 0.06
+        td.optimal 0.06
       tr
-        td Vitreous Mercoxit
+        th Vitreous Mercoxit
         td &#160;
         td &#160;
         td 0.00
@@ -649,5 +618,4 @@ block context
         td 0.00
         td 0.00
         td 0.00
-        td 
-          strong.text-success 0.06
+        td.optimal 0.06
