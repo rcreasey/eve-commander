@@ -1,31 +1,10 @@
 extends layout
 
 block context
-  h3 #{title}
-  :coffeescript
-    root = exports ? this
-    root.toggle_ores = ->
-      hide_ores()
-
-      if $('th.ore-icon').length
-        $('th.ore-icon').remove()
-      else
-        $.each $('tbody tr.ore-class th'), (i, e) ->
-          ore_class = $(e).text().toLowerCase().replace(' ','_')
-          $(e).before $('<th class="ore-icon ' + ore_class + '" rowspan="3">&#160;</th>')
-        
-        $('thead tr th:first-child').before $('<th class="ore-icon">&#160;</th>')
-
-    root.hide_ores = ->
-      $('tbody tr.ore-class').nextUntil('tr.ore-class').toggle()
-
-    $(document).ready ->
-      hide_ores()
-
+  h2 #{title}
   p This chart shows the refining amount of each mineral in a given ore type.
-
-  .btn-group
-    button#toggle_ores.btn(onclick="toggle_ores()") Ore Types
+  
+  include toggle_hide
 
   table.table.table-condensed.table-ore
     thead

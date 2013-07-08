@@ -1,4 +1,47 @@
 extends layout
 
 block context
-  h3 #{title}
+  h2 #{title}
+  p This table shows the projected isk/hour of minerals mined by ore type.
+
+  include toggle_hide
+  :coffeescript
+    $(document).ready ->
+      $.ajax
+        type: "GET"
+        url: "/data/ores.json"
+        dataType: "json"
+        success: (data) ->
+          tbody = $('tbody')
+          $.each data, (i, ore) ->
+            tr = $('<tr>')
+            tr.addClass('ore-class') if !(i%3)
+            tr.append $("<th>").text(ore.name)
+            tr.append $("<td>").text(ore.batch)
+            tr.append $("<td>").text(ore.weight)
+            tr.append $("<td>").text("0.00")
+            tr.append $("<td>").text("0.00")
+            tr.append $("<td>").text("0.00")
+            tr.append $("<td>").text("0.00")
+            tr.append $("<td>").text("0.00")
+            tr.append $("<td>").text("0.00")
+            tr.append $("<td>").text("0.00")
+            tr.append $("<td>").text("0.00")
+            tbody.append tr
+          hide_ores()
+
+  table.table.table-condensed.table-ore
+    thead
+      tr
+        th Ore
+        th Batch
+        th Weight
+        th.tritanium Tritanium
+        th.pyerite Pyerite
+        th.mexallon Mexallon
+        th.isogen Isogen
+        th.nocxium Nocxium
+        th.zydrine Zydrine
+        th.megacyte Megacyte
+        th.morphite Morphite
+    tbody

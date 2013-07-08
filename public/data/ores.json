@@ -1,0 +1,195 @@
+[ 
+  {
+      "name": "Veldspar"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Concentrated Veldspar"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Dense Veldspar"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Scordite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Condensed Scordite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Massive Scordite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Pyroxeres"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Solid Pyroxeres"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Viscous Pyroxeres"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Plagioclase"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Azure Plagioclase"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Rich Plagioclase"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Omber"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Silvery Omber"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Golden Omber"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Kernite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Luminous Kernite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Fiery Kernite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Jaspet"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Pure Jaspet"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Pristine Jaspet"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Hemorphite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Vivid Hemorphite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Radiant Hemorphite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Hedbergite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Vitric Hedbergite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Glazed Hedbergite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Gneiss"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Iridescent Gneiss"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Prismatic Gneiss"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Dark Ochre"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Onyx Ochre"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Obsidian Ochre"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Crokite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Sharp Crokite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Crystalline Crokite"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Spodumain"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Bright Spodumain"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Gleaming Spodumain"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Bistot"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Triclinic Bistot"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Monoclinic Bistot"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Arkanor"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Crimson Arkonor"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Prime Arkonor"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Mercoxit"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Magma Mercoxit"
+    , "batch": 333
+    , "weight": 1
+  }, {
+      "name": "Vitreous Mercoxit"
+    , "batch": 333
+    , "weight": 1
+  }
+]
