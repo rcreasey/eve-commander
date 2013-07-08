@@ -62,7 +62,7 @@
       , {"name": "Scandium", "id": 16639, "icon": "scandium.png"}
     ]
   },
-            {
+  {
       "name": "Rolled Tungsten Alloy"
     , "id": 16657
     , "icon": "sreaction.png"
@@ -81,7 +81,7 @@
     ]
   },
   {
-      "name": "Caesarium Cadm"id"e"
+      "name": "Caesarium Cadmide"
     , "id": 16663
     , "icon": "sreaction.png"
     , "components": [
@@ -162,4 +162,4 @@
       , {"name": "Mercury", "id": 16646, "icon": "mercury.png"}
     ]
   }
-];
+]
