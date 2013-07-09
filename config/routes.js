@@ -12,6 +12,8 @@ module.exports = function (app, auth) {
   var ore = require('../app/controllers/ore')
   app.get('/ore/profit', ore.profit)
   app.get('/ore/volume', ore.volume)
+  app.get('/ore/refine', ore.refine)
+  app.get('/ore', ore.refine)
 
   // tools
   var tools = require('../app/controllers/tools')

@@ -7,3 +7,9 @@ exports.profit = function (req, res) {
 exports.volume = function (req, res) {
   res.render('ore/volume', {title: 'Ore Yield By Volume'})
 }
+
+// GET /mining
+// GET /mining/refine
+exports.refine = function (req, res) {
+  res.render('ore/refine', {title: 'Mineral Refines By Ore'})
+}

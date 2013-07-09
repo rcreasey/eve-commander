@@ -12,6 +12,7 @@ block context
         url: "/data/ores.json"
         dataType: "json"
         success: (data) ->
+          $('.loading').remove()
           tbody = $('tbody')
           $.each data, (i, ore) ->
             tr = $('<tr>')
@@ -45,3 +46,8 @@ block context
         th.megacyte Megacyte
         th.morphite Morphite
     tbody
+      tr.loading
+        th(colspan=12)     
+          h4 
+            i.icon-spinner.icon-spin.icon-large
+            | Calculating ore profit...
