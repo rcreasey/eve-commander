@@ -4,12 +4,9 @@ block context
   h3 #{title}
   p This chart shows the refining amount of each mineral in a given ore type.
 
-  include toggle_hide
+  include table_script
 
   :coffeescript
-    find_optimal = (a, b) ->
-      (if parseInt($(a).text(), 10) < parseInt($(b).text()) then 0 else 1)
-
     $(document).ready ->
       $.ajax
         type: "GET"
@@ -22,17 +19,23 @@ block context
             tr = $('<tr>')
             tr.addClass('ore-class') if !(i%3)
             tr.append $("<th>").text(ore.name)
+            tr.append $("<td>").text(ore.batch)
+            tr.append $("<td>").text(ore.weight)
             $.each ore.refines, (i, refine) ->
-              tr.append $("<td>").addClass(data.mineral_index[i].toLowerCase()).text(refine)
+              td = $("<td>").addClass(data.mineral_index[i].toLowerCase()).text(refine)
+              tr.append td
 
             tbody.append tr
           
+          find_optimal(data.mineral_index)
           hide_ores()
 
   table.table.table-condensed.table-ore
     thead
       tr
         th Ore
+        th Batch
+        th Weight
         th.tritanium Tritanium
         th.pyerite Pyerite
         th.mexallon Mexallon

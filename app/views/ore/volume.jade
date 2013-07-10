@@ -2,14 +2,11 @@ extends layout
 
 block context
   h3 #{title}
-  p This chart shows the refining amount of each mineral in a given ore type.
+  p This chart shows the refining amount of each mineral in 1 m3 of an ore type.
   
-  include toggle_hide
+  include table_script
 
   :coffeescript
-    find_optimal = (a, b) ->
-      (if parseFloat($(a).text()) < parseFloat($(b).text()) then 0 else 1)
-
     $(document).ready ->
       $.ajax
         type: "GET"
@@ -25,19 +22,13 @@ block context
             tr.append $("<td>").text(ore.batch)
             tr.append $("<td>").text(ore.weight)
             $.each ore.refines, (i, refine) ->
-              per_meter = 1 / parseFloat(ore.weight)
-              refine_per_meter = parseFloat(ore.batch) / per_meter
-              mineral_per_meter = parseFloat(refine) / refine_per_meter
-              tr.append $("<td>").text(mineral_per_meter.toFixed(2)).addClass(data.mineral_index[i].toLowerCase())
+              td = $("<td>").text(mineral_per_meter(ore.weight, ore.batch, refine))
+              td.addClass(data.mineral_index[i].toLowerCase())
+              tr.append td
 
             tbody.append tr
           
-          $.each data.mineral_index, (i, header) -> 
-            column = $('tbody td.'+data.mineral_index[i].toLowerCase())
-            column.sort find_optimal
-            optimal = column.slice(-3)
-            optimal.addClass "optimal"
-
+          find_optimal(data.mineral_index)
           hide_ores()
 
   table.table.table-condensed.table-ore

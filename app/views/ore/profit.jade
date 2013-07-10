@@ -1,10 +1,11 @@
 extends layout
 
 block context
-  h2 #{title}
-  p This table shows the projected isk/hour of minerals mined by ore type.
+  h3 #{title}
+  p This chart shows the refined mineral average profit per 1m3 of an ore type.
+  
+  include table_script
 
-  include toggle_hide
   :coffeescript
     $(document).ready ->
       $.ajax
@@ -14,21 +15,20 @@ block context
         success: (data) ->
           $('.loading').remove()
           tbody = $('tbody')
-          $.each data, (i, ore) ->
+          $.each data.ores, (i, ore) ->
             tr = $('<tr>')
             tr.addClass('ore-class') if !(i%3)
             tr.append $("<th>").text(ore.name)
             tr.append $("<td>").text(ore.batch)
             tr.append $("<td>").text(ore.weight)
-            tr.append $("<td>").text("0.00")
-            tr.append $("<td>").text("0.00")
-            tr.append $("<td>").text("0.00")
-            tr.append $("<td>").text("0.00")
-            tr.append $("<td>").text("0.00")
-            tr.append $("<td>").text("0.00")
-            tr.append $("<td>").text("0.00")
-            tr.append $("<td>").text("0.00")
+            $.each ore.refines, (i, refine) ->
+              td = $("<td>").text(mineral_per_meter(ore.weight, ore.batch, refine))
+              td.addClass(data.mineral_index[i].toLowerCase())
+              tr.append td
+
             tbody.append tr
+          
+          find_optimal(data.mineral_index)
           hide_ores()
 
   table.table.table-condensed.table-ore
@@ -50,4 +50,5 @@ block context
         th(colspan=12)     
           h4 
             i.icon-spinner.icon-spin.icon-large
-            | Calculating ore profit...
+            | Calculating ore yield...
+
