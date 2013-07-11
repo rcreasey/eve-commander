@@ -4,9 +4,8 @@
 :coffeescript
   root = exports ? this
   root.toggle_ores = ->
-    hide_ores()
-
     if $('th.ore-icon').length
+      hide_variants()
       $('th.ore-icon').remove()
     else
       $.each $('tbody tr.ore-class th'), (i, e) ->
@@ -15,21 +14,21 @@
       
       $('thead tr th:first-child').before $('<th class="ore-icon">&#160;</th>')
 
-  root.hide_ores = ->
+  root.hide_variants = ->
     $('tbody tr.ore-class').nextUntil('tr.ore-class').toggle()
 
   root.compare = (a, b) ->
-    (if parseFloat($(a).text()) < parseFloat($(b).text()) then 0 else 1)
+    parseFloat($(b).text()) - parseFloat($(a).text())
 
   root.find_optimal = (mineral_index) -> 
 
     $.each mineral_index, (i, ore) -> 
       ore_class = ore.toLowerCase()
-      columns = $('tbody').find('td.'+ore_class)
-      $(columns).sort(compare).slice(-3).addClass('optimal')
+      columns = $('tbody').find('td.'+ore_class).sort(compare)
+      columns.slice(0,3).addClass('optimal')
 
   root.mineral_per_meter = (weight, batch, refine) ->
     per_meter = 1 / parseFloat(weight)
     refine_per_meter = parseFloat(batch) / per_meter
     mineral_per_meter = parseFloat(refine) / refine_per_meter
-    return mineral_per_meter.toFixed(2)
+    return mineral_per_meter.toFixed(3)
