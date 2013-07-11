@@ -4,6 +4,7 @@ block context
   h3 #{title}
   p This chart shows the refined mineral average profit per 1m3 of an ore type.
   
+  include ../includes/common_functions
   include table_script
 
   :coffeescript
@@ -15,6 +16,7 @@ block context
         success: (data) ->
           $('.loading').remove()
           tbody = $('tbody')
+
           $.each data.ores, (i, ore) ->
             tr = $('<tr>')
             tr.addClass('ore-class') if !(i%3)
@@ -28,6 +30,7 @@ block context
 
             tbody.append tr
           
+          fetch_prices '/data/minerals.json'
           find_optimal(data.mineral_index)
           hide_ores()
 

@@ -1,0 +1,56 @@
+:coffeescript
+  root = exports ? this
+  class Item
+    constructor: (@id, @name) ->
+
+    update_values: (volume, avg, max, min, stddev, median, percentile) ->
+      @volume = parseFloat(volume)
+      @avg = parseFloat(avg)
+      @max = parseFloat(max)
+      @min = parseFloat(min)
+      @stddev = parseFloat(stddev)
+      @median = parseFloat(median)
+      @percentile = parseFloat(percentile)
+
+  root.toggle_ores = ->
+    hide_ores()
+
+  root.fetch_prices = (url, callback) -> 
+    $.ajax
+      url: url
+      dataType: 'json'
+      cache: true
+      success: (data) ->
+        type_ids = $.map(data, (item) ->
+          "typeid=" + item.id
+        ).join("&")
+
+        items = $.map(data, (item) ->
+          new Item item.id, item.name
+        )
+
+        jita_url = "http://api.eve-central.com/api/marketstat?" + "regionlimit=10000002&" + type_ids
+        $.ajax
+          type: "GET"
+          url: jita_url
+          dataType: "xml"
+          cache: true
+          success: (market_data) ->
+            $.each items, (index, item) ->
+              vol = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > volume").text()
+              avg = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > avg").text()
+              max = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > max").text()
+              min = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > min").text()
+              std = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > stddev").text()
+              med = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > median").text()
+              per = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > percentile").text()
+              item.update_values(vol, avg, max, min, std, med, per)
+              th = $('th.'+item.name.toLowerCase())
+              th.append $('<div>').text( item.avg ).addClass('avg')
+              th.height(90)
+
+              $.each $('td.'+item.name.toLowerCase()), (i, mineral) ->
+                quantity = parseFloat($(mineral).text())
+                $(mineral).text (quantity * item.avg).toFixed(2)
+
+    return true

@@ -19,18 +19,14 @@
     $('tbody tr.ore-class').nextUntil('tr.ore-class').toggle()
 
   root.compare = (a, b) ->
-    (if parseFloat($(a).text()) > parseFloat($(b).text()) then 1 else 0)
+    (if parseFloat($(a).text()) < parseFloat($(b).text()) then 0 else 1)
 
   root.find_optimal = (mineral_index) -> 
-    return true
 
     $.each mineral_index, (i, ore) -> 
       ore_class = ore.toLowerCase()
-      column = $('tbody td.'+ore_class)
-      column.sort find_optimal
-      optimal = column.slice(-3)
-      console.log column
-      optimal.addClass "optimal"
+      columns = $('tbody').find('td.'+ore_class)
+      $(columns).sort(compare).slice(-3).addClass('optimal')
 
   root.mineral_per_meter = (weight, batch, refine) ->
     per_meter = 1 / parseFloat(weight)
