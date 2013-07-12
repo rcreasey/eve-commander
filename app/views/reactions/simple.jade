@@ -2,25 +2,11 @@ extends layout
 
 block context
   h3 Simple Reactions
-  table#simple-reactions.table.table-bordered
-    thead
-      tr
-        td Icon
-        td Value
-        td Reaction
-        td Icon
-        td Value
-        td Component
-        td Icon
-        td Value
-        td Component
-    tbody
-      tr.loading
-        th(colspan=9)
-          
-          h4 
-            i.icon-spinner.icon-spin.icon-large
-            | Updating current prices...
+  p This table shows the current market value of simple reactions.
+  
+  h5 Current Market
+  .btn-group
+    button.btn Jita
 
   :coffeescript
     $(document).ready ->
@@ -52,23 +38,50 @@ block context
               $('.loading').remove()
               $.each reactions, (index, reaction) ->
                 reaction_value = $(data).find("evec_api > marketstat > type#" + reaction.id + " > buy > max").text()
-                sell = (reaction_value * 200).toFixed(2)
-                row = $("<tr>")
-                row.append $("<td>").append($("<img>").attr("src", "http://tarrif.net/eve/img/icons/" + reaction.icon).attr("height", "32").attr("width", "32"))
-                row.append $("<td>").text(sell)
-                row.append $("<td>").text(reaction.name)
-                buy = 0.0
+                reaction_volume = $(data).find("evec_api > marketstat > type#" + reaction.id + " > buy > volume").text()
+                row = $('<tr>')
+
+                buy = parseFloat(0.0)
                 $.each reaction.components, (index, component) ->
                   component_value = $(data).find("evec_api > marketstat > type#" + component.id + " > sell > max").text()
-                  buy = +(component_value * 100)
-                  row.append $("<td>").append($("<img>").attr("src", "http://tarrif.net/eve/img/icons/" + component.icon).attr("height", "32").attr("width", "32"))
-                  row.append $("<td>").append((component_value * 100).toFixed(2))
-                  row.append $("<td>").text(component.name)
+                  buy = +parseFloat(component_value * 100)
+                  td = $('<td class="component '+ component.name.toLowerCase().replace(' ','_') + '">').text(component.name)
+                  td.append $('<i class="icon-chevron-right icon-3x pull-right"></i>')
+                  td.append $('<div class="input">').text("100 units")
+                  td.append $('<div class="buy">').text( buy.toFixed(0) )
+                  row.append td
 
-                if sell > buy
-                  row.attr "class", "success"  if sell > buy
+                sell = parseFloat(reaction_value * 200)
+                td = $('<td class="reaction">').text(reaction.name)
+                td.append $('<div class="yield">').text("200 units")
+                td.append $('<div class="sell">').text( String(sell.toFixed(0)))
+                row.append td
 
-                $("#simple-reactions tbody").append row
+                td = $('<td class="market">')
+                delta = $('<i class="icon-4x pull-left">')
+                td.append( delta )
+                td.append $('<span class="amount">').text( (sell - buy).toFixed(0) )
+                td.append $('<div class="volume">').text(reaction_volume + " vol")
+                row.append td
 
+                row.addClass "optimal" if sell > buy
+                delta.addClass (if sell > buy then "icon-caret-up" else "icon-caret-down")
+
+                $("tbody").append row
+
+  table.table.table-bordered.table-reactions
+    thead
+      tr
+        th Component
+        th Component
+        th Reaction
+        th Market
+    tbody
+      tr.loading
+        th(colspan=4)
+          
+          h4 
+            i.icon-spinner.icon-spin.icon-large
+            | Updating current prices...
 
 
