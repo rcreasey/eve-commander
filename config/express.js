@@ -1,13 +1,14 @@
 var express = require('express')
   , helpers = require('../app/helpers/helpers.js')
+  , lessMiddleware = require('less-middleware')
 
 module.exports = function (app, config) {
   app.set('showStackError', true)
-  app.use(require('stylus').middleware(config.root + '/public'));
-  app.use(express.static(config.root + '/public'))
   app.use(express.logger('dev'))
   app.set('views', config.root + '/app/views')
   app.set('view engine', 'jade')
+  app.use(require('less-middleware')({ src: config.root + '/public', compress: true }));
+  app.use(express.static(config.root + '/public'))
 
   app.configure(function () {
     // dynamic helpers

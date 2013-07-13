@@ -17,6 +17,7 @@
     "express": "3.2.5",
     "jade": "0.30.x",
     "stylus": "0.32.x",
+    "less-middleware": "0.1.x",
     "coffee-script": "1.6.x",
     "async": "0.2.8",
     "underscore": "1.4.x",
