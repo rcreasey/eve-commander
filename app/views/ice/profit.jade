@@ -2,8 +2,8 @@ extends layout
 
 block context
   h3 #{title}
-  p This chart shows the refined mineral average profit per 1m3 of an ore type.
-  
+  p This chart shows the price of a given ice block, based on its product's price.
+
   include ../includes/common_functions
   include table_script
 
@@ -11,47 +11,48 @@ block context
     $(document).ready ->
       $.ajax
         type: "GET"
-        url: "/data/ores.json"
+        url: "/data/ice.json"
         dataType: "json"
         success: (data) ->
           $('.loading').remove()
-          tbody = $('tbody')
+          thead = $('thead tr')
+          $.each data.product_index, (i, product) ->
+            th = $('<th>').addClass(product.toLowerCase().replace(' ','-'))
+            th.text product
+            thead.append th    
 
-          $.each data.ores, (i, ore) ->
+          tbody = $('tbody')
+          $.each data.ices, (i, ice) ->
             tr = $('<tr>')
-            tr.addClass('ore-class') if !(i%3)
-            tr.append $("<th>").text(ore.name)
-            tr.append $("<td>").text(ore.batch)
-            tr.append $("<td>").text(ore.weight)
-            $.each ore.refines, (i, refine) ->
-              td = $("<td>").text(mineral_per_meter(ore.weight, ore.batch, refine))
-              td.addClass(data.mineral_index[i].toLowerCase())
+            tr.addClass(if (ice.variant) then 'ice-variant' else 'ice-class')
+            tr.append $("<th>").text(ice.name)
+            $.each ice.refines, (i, refine) ->
+              td = $("<td>").addClass(data.product_index[i].toLowerCase().replace(' ','-')).text(refine)
               tr.append td
 
             tbody.append tr
           
-          fetch_prices '/data/minerals.json'
-          find_optimal(data.mineral_index)
-          toggle_ores()
-            
-  table.table.table-condensed.table-ore
+          add_icons()
+
+          fetch_prices '/data/products.json',  ->
+            $('thead tr').append $('<th>').addClass('total').text('Total')
+            $.each $('tbody tr'), (i, row) ->
+              total = 0.0
+              $.each $(row).find('td'), (i, td) ->
+                total += parseFloat($(td).text())
+              $(row).append $('<td>').addClass('total').text(total.toFixed(2))
+          
+            find_optimal(data.product_index.concat(['total']))
+
+
+  table.table.table-condensed.table-ice
     thead
       tr
-        th Ore
-        th Batch
-        th Weight
-        th.tritanium Tritanium
-        th.pyerite Pyerite
-        th.mexallon Mexallon
-        th.isogen Isogen
-        th.nocxium Nocxium
-        th.zydrine Zydrine
-        th.megacyte Megacyte
-        th.morphite Morphite
+        th Ice
     tbody
       tr.loading
-        th(colspan=12)     
+        th    
           h4 
             i.icon-spinner.icon-spin.icon-large
-            | Calculating ore yield...
+            | Calculating ice yield...
 

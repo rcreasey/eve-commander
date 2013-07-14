@@ -45,12 +45,14 @@
               med = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > median").text()
               per = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > percentile").text()
               item.update_values(vol, avg, max, min, std, med, per)
-              th = $('th.'+item.name.toLowerCase())
+              th = $('th.'+item.name.toLowerCase().replace(' ','-'))
               th.append $('<div>').text( item.avg ).addClass('avg')
               th.height(90)
 
-              $.each $('td.'+item.name.toLowerCase()), (i, mineral) ->
+              $.each $('td.'+item.name.toLowerCase().replace(' ','-')), (i, mineral) ->
                 quantity = parseFloat($(mineral).text())
                 $(mineral).text (quantity * item.avg).toFixed(2)
+
+            callback.call() if callback
 
     return true
