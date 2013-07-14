@@ -47,7 +47,7 @@
               item.update_values(vol, avg, max, min, std, med, per)
               th = $('th.'+item.name.toLowerCase().replace(' ','-'))
               th.append $('<div>').text( item.avg ).addClass('avg')
-              th.height(90)
+              th.height(95)
 
               $.each $('td.'+item.name.toLowerCase().replace(' ','-')), (i, mineral) ->
                 quantity = parseFloat($(mineral).text())
