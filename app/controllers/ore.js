@@ -1,15 +1,15 @@
-// GET /mining/profit
+// GET /ore/profit
 exports.profit = function (req, res) {
   res.render('ore/profit', {title: 'Ore Yield By Profit'})
 }
 
-// GET /mining/volume
+// GET /ore/volume
 exports.volume = function (req, res) {
   res.render('ore/volume', {title: 'Ore Yield By Volume'})
 }
 
-// GET /mining
-// GET /mining/refine
+// GET /ore
+// GET /ore/refine
 exports.refine = function (req, res) {
-  res.render('ore/refine', {title: 'Mineral Refines By Ore'})
+  res.render('ore/refine', {title: 'Ore Refines'})
 }

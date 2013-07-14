@@ -9,26 +9,32 @@ div.navbar.navbar-fixed-top
       div.nav-collapse.collapse
         ul.nav
           li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown') Guides
+            a.dropdown-toggle(href='#', data-toggle='dropdown') Ore
               b.caret
             ul.dropdown-menu
-              li.nav-header Reactions
+              li
+                a(href='/ore/') Refines
+              li
+                a(href='/ore/volume') By Volume
+              li
+                a(href='/ore/profit') By Profit
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown') Ice
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='/ice/') Refines
+              li
+                a(href='/ice/profit') By Profit
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown') Reactions
+              b.caret
+            ul.dropdown-menu
               li
                 a(href='/reactions/simple') Simple
               li
                 a(href='/reactions/alchemy') Alchemy
               li
                 a(href='/reactions/complex') Complex
-              li.nav-header Mining
-              li
-                a(href='/ore/') By Refines
-              li
-                a(href='/ore/volume') By Volume
-              li
-                a(href='/ore/profit') By Profit
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown') Tools
-              b.caret
-            ul.dropdown-menu
-              li
-                a(href='/tools/foreman') Mining Foreman
+          li
+            a(href='/foreman') Foreman

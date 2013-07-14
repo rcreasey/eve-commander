@@ -15,9 +15,16 @@ module.exports = function (app, auth) {
   app.get('/ore/refine', ore.refine)
   app.get('/ore', ore.refine)
 
-  // tools
-  var tools = require('../app/controllers/tools')
-  app.get('/tools/foreman', tools.foreman)
+  // ice
+  var ice = require('../app/controllers/ice')
+  app.get('/ice/profit', ice.profit)
+  app.get('/ice/volume', ice.volume)
+  app.get('/ice/refine', ice.refine)
+  app.get('/ice', ice.refine)
+
+  // foreman
+  var foreman = require('../app/controllers/foreman')
+  app.get('/foreman', foreman.index)
 
   // root
   var root = require('../app/controllers/root')

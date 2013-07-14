@@ -32,3 +32,7 @@ function datetimeFormatString () {
 function formatDatetime (date) {
   return moment(date).format(datetimeFormatString());
 }
+
+function cssClassify (word) {
+  return word.toLowerCase.replace(' ','-')
+}

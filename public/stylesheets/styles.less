@@ -1,228 +1,282 @@
 body {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .loading {
-    th {
-        text-align: center !important;
-    }
+  th {
+    text-align: center !important;
+  }
 }
 
 .table {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 thead {
-    th {
-        background-color: #f9f9f9;
-        text-align: center !important;
-    }
+  th {
+    background-color: #f9f9f9;
+    text-align: center !important;
+  }
 }
 div.sell {
-    font-weight: bold;
+  font-weight: bold;
 }
+.table-ice tbody tr.ice-class td,.table-ice tbody tr.ice-class th,
 .table-ore tbody tr.ore-class td,.table-ore tbody tr.ore-class th {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
+.table-ice thead tr th,.table-ice tbody tr td,.table-ice tbody tr th,
 .table-ore thead tr th,.table-ore tbody tr td,.table-ore tbody tr th {
-    background-color: #f9f9f9;
-    text-align: center;
+  background-color: #f9f9f9;
+  text-align: center;
 }
+.table-ice,
 .table-ore {
-    thead {
-        tr {
-            th:first-child {
-                text-align: left;
-            }
-            th {
-                .avg {
-                    color: #468847;
-                    font-weight: bold;
-                }
-            }
+  thead {
+    tr {
+      th:first-child {
+        text-align: left;
+      }
+      th {
+        .avg {
+          color: #468847;
+          font-weight: bold;
         }
-        th {
-            height: 70px;
-        }
+      }
     }
-    th.ore-icon {
-        width: 60px;
+    th {
+      height: 70px;
     }
-    tbody {
-        tr.ore-class {
-            th {
-                font-weight: bold;
-            }
-        }
-        tr {
-            td.optimal {
-                background-color: #dff0d8;
-                color: #468847;
-                font-weight: bold;
-            }
-            th {
-                font-weight: normal;
-                text-align: left;
-            }
-        }
+  }
+  th.ice-icon,
+  th.ore-icon {
+    height: 60px;
+    width: 60px;
+  }
+  tbody {
+    tr.ice-class,
+    tr.ore-class {
+      th {
+        font-weight: bold;
+      }
     }
+    tr {
+      td {
+        vertical-align: middle;
+      }
+      td.optimal {
+        background-color: #dff0d8;
+        color: #468847;
+        font-weight: bold;
+      }
+      th {
+        font-weight: normal;
+        text-align: left;
+      }
+    }
+  }
 }
 
 .table-reactions {
-    tbody {
-        td.reaction {
-            background: url("/images/50_64_4.png") center left no-repeat;
-            padding: 10px 10px 10px 70px;
-        }
-        td.component {
-            padding: 10px 10px 10px 70px;
-        }
-        td {
-            height: 65px;
-            i {
-                margin-top: 10px;
-            }
-        }
-        tr.optimal {
-            td {
-                background-color: #cdede7;
-            }
-        }
+  tbody {
+    td.reaction {
+      background: url("/images/50_64_4.png") center left no-repeat;
+      padding: 10px 10px 10px 70px;
+    }
+    td.component {
+      padding: 10px 10px 10px 70px;
+    }
+    td {
+      height: 65px;
+      i {
+        margin-top: 10px;
+      }
     }
     tr.optimal {
-        div.sell {
-            color: #468847;
-            font-weight: bold;
-        }
+      td {
+        background-color: #cdede7;
+      }
     }
+  }
+  tr.optimal {
+    div.sell {
+      color: #468847;
+      font-weight: bold;
+    }
+  }
 }
 
 td.hydrocarbons {
-    background: url("/images/50_64_9.png") center left no-repeat;
+  background: url("/images/50_64_9.png") center left no-repeat;
 }
 th.bistot {
-    background: url("/images/23_64_6.png") center center no-repeat;
+  background: url("/images/23_64_6.png") center center no-repeat;
 }
 td.mercury {
-    background: url("/images/47_64_7.png") center left no-repeat;
+  background: url("/images/47_64_7.png") center left no-repeat;
 }
 th.hedbergite {
-    background: url("/images/23_64_9.png") center center no-repeat;
+  background: url("/images/23_64_9.png") center center no-repeat;
 }
 th.pyerite {
-    background: url("/images/6_64_15.png") top center no-repeat;
+  background: url("/images/6_64_15.png") top center no-repeat;
 }
 td.thulium {
-    background: url("/images/47_64_13.png") center left no-repeat;
+  background: url("/images/47_64_13.png") center left no-repeat;
 }
 th.arkonor {
-    background: url("/images/23_64_5.png") center center no-repeat;
+  background: url("/images/23_64_5.png") center center no-repeat;
 }
 th.spodumain {
-    background: url("/images/23_64_14.png") center center no-repeat;
+  background: url("/images/23_64_14.png") center center no-repeat;
 }
 th.hemorphite {
-    background: url("/images/23_64_10.png") center center no-repeat;
+  background: url("/images/23_64_10.png") center center no-repeat;
 }
 td.caesium {
-    background: url("/images/47_64_2.png") center left no-repeat;
+  background: url("/images/47_64_2.png") center left no-repeat;
 }
 td.platinum {
-    background: url("/images/47_64_9.png") center left no-repeat;
+  background: url("/images/47_64_9.png") center left no-repeat;
 }
 th.omber {
-    background: url("/images/23_64_13.png") center center no-repeat;
+  background: url("/images/23_64_13.png") center center no-repeat;
 }
 th.morphite {
-    background: url("/images/35_64_2.png") top center no-repeat;
+  background: url("/images/35_64_2.png") top center no-repeat;
 }
 td.technetium {
-    background: url("/images/47_64_12.png") center left no-repeat;
+  background: url("/images/47_64_12.png") center left no-repeat;
 }
 td.tungsten {
-    background: url("/images/47_64_16.png") center left no-repeat;
+  background: url("/images/47_64_16.png") center left no-repeat;
 }
 td.scandium {
-    background: url("/images/47_64_11.png") center left no-repeat;
+  background: url("/images/47_64_11.png") center left no-repeat;
 }
 th.dark_ochre {
-    background: url("/images/23_64_8.png") center center no-repeat;
+  background: url("/images/23_64_8.png") center center no-repeat;
 }
 th.veldspar {
-    background: url("/images/24_64_1.png") center center no-repeat;
+  background: url("/images/24_64_1.png") center center no-repeat;
 }
 td.neodymium {
-    background: url("/images/47_64_8.png") center left no-repeat;
+  background: url("/images/47_64_8.png") center left no-repeat;
 }
 td.vanadium {
-    background: url("/images/47_64_15.png") center left no-repeat;
+  background: url("/images/47_64_15.png") center left no-repeat;
 }
 th.mercoxit {
-    background: url("/images/35_64_11.png") center center no-repeat;
+  background: url("/images/35_64_11.png") center center no-repeat;
 }
 th.gneiss {
-    background: url("/images/25_64_1.png") center center no-repeat;
+  background: url("/images/25_64_1.png") center center no-repeat;
 }
 th.zydrine {
-    background: url("/images/11_64_11.png") top center no-repeat;
+  background: url("/images/11_64_11.png") top center no-repeat;
 }
 td.hafnium {
-    background: url("/images/47_64_6.png") center left no-repeat;
+  background: url("/images/47_64_6.png") center left no-repeat;
 }
 th.mexallon {
-    background: url("/images/6_64_12.png") top center no-repeat;
+  background: url("/images/6_64_12.png") top center no-repeat;
 }
 td.evaporite_deposits {
-    background: url("/images/50_64_7.png") center left no-repeat;
+  background: url("/images/50_64_7.png") center left no-repeat;
 }
 th.scordite {
-    background: url("/images/23_64_15.png") center center no-repeat;
+  background: url("/images/23_64_15.png") center center no-repeat;
 }
 th.isogen {
-    background: url("/images/6_64_16.png") top center no-repeat;
+  background: url("/images/6_64_16.png") top center no-repeat;
 }
 td.promethium {
-    background: url("/images/47_64_10.png") center left no-repeat;
+  background: url("/images/47_64_10.png") center left no-repeat;
 }
 td.silicates {
-    background: url("/images/50_64_10.png") center left no-repeat;
+  background: url("/images/50_64_10.png") center left no-repeat;
 }
 th.plagioclase {
-    background: url("/images/24_64_2.png") center center no-repeat;
+  background: url("/images/24_64_2.png") center center no-repeat;
 }
 th.nocxium {
-    background: url("/images/11_64_9.png") top center no-repeat;
+  background: url("/images/11_64_9.png") top center no-repeat;
 }
 th.tritanium {
-    background: url("/images/6_64_14.png") top center no-repeat;
+  background: url("/images/6_64_14.png") top center no-repeat;
 }
 td.chromium {
-    background: url("/images/47_64_3.png") center left no-repeat;
+  background: url("/images/47_64_3.png") center left no-repeat;
 }
 td.atmospheric_gases {
-    background: url("/images/50_64_8.png") center left no-repeat;
+  background: url("/images/50_64_8.png") center left no-repeat;
 }
 th.jaspet {
-    background: url("/images/23_64_11.png") center center no-repeat;
+  background: url("/images/23_64_11.png") center center no-repeat;
 }
 td.cobalt {
-    background: url("/images/47_64_4.png") center left no-repeat;
+  background: url("/images/47_64_4.png") center left no-repeat;
 }
 td.cadmium {
-    background: url("/images/47_64_1.png") center left no-repeat;
+  background: url("/images/47_64_1.png") center left no-repeat;
 }
 td.titanium {
-    background: url("/images/47_64_16.png") center left no-repeat;
+  background: url("/images/47_64_16.png") center left no-repeat;
 }
 th.crokite {
-    background: url("/images/23_64_7.png") center center no-repeat;
+  background: url("/images/23_64_7.png") center center no-repeat;
 }
 th.kernite {
-    background: url("/images/23_64_12.png") center center no-repeat;
+  background: url("/images/23_64_12.png") center center no-repeat;
 }
 th.pyroxeres {
-    background: url("/images/23_64_16.png") center center no-repeat;
+  background: url("/images/23_64_16.png") center center no-repeat;
 }
 th.megacyte {
-    background: url("/images/11_64_10.png") top center no-repeat;
+  background: url("/images/11_64_10.png") top center no-repeat;
+}
+th.blue-ice {
+  background: url("/images/51_64_5.png") top center no-repeat;
+}
+th.clear-icile {
+  background: url("/images/51_64_2.png") top center no-repeat;
+}
+th.dark-glitter {
+  background: url("/images/51_64_3.png") top center no-repeat;
+}
+th.gelidus {
+  background: url("/images/51_64_6.png") top center no-repeat;
+}
+th.glacial-mass {
+  background: url("/images/51_64_4.png") top center no-repeat;
+}
+th.glare-crust {
+  background: url("/images/51_64_1.png") top center no-repeat;
+}
+th.krystallos {
+  background: url("/images/51_64_9.png") top center no-repeat;
+}
+th.white-glaze {
+  background: url("/images/51_64_8.png") top center no-repeat;
+}
+th.heavy-water {
+  background: url("/images/51_64_12.png") top center no-repeat;
+}
+th.liquid-ozone {
+  background: url("/images/51_64_11.png") top center no-repeat;
+}
+th.strontium {
+  background: url("/images/51_64_10.png") top center no-repeat;
+}
+th.helium-isotopes {
+  background: url("/images/51_64_13.png") top center no-repeat;
+}
+th.hydrogen-isotopes {
+  background: url("/images/51_64_14.png") top center no-repeat;
+}
+th.oxygen-isotopes {
+  background: url("/images/51_64_15.png") top center no-repeat;
+}
+th.nitrogen-isotopes {
+  background: url("/images/51_64_16.png") top center no-repeat;
 }
