@@ -1,0 +1,16 @@
+extends layout
+
+block context
+  h3 Inventory Appraisal
+  p This tool will take a list of inventory items and appraise their value based on the sum of their refined parts.
+  p.text-warning We only know how to calculate Ore and Ice right now.  Scrap will be supported soon!
+
+
+  form.form-horizontal(method='post', action='/tools/appraisal', enctype='multipart/form-data')
+    fieldset
+      .control-group
+        label.control-label(for='inventory') Inventory Data
+        .controls
+          textarea#inventory.input-xxlarge(name='inventory', rows='15', placeholder='Paste inventory here...')
+      .form-actions
+        button.btn.btn-primary(type='submit') Appraise

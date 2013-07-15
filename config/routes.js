@@ -22,9 +22,11 @@ module.exports = function (app, auth) {
   app.get('/ice/refine', ice.refine)
   app.get('/ice', ice.refine)
 
-  // foreman
-  var foreman = require('../app/controllers/foreman')
-  app.get('/foreman', foreman.index)
+  // tools
+  var tools = require('../app/controllers/tools')
+  app.get('/tools/foreman', tools.foreman)
+  app.get('/tools/appraisal', tools.appraisal)
+  app.post('/tools/appraisal', tools.appraise)
 
   // root
   var root = require('../app/controllers/root')

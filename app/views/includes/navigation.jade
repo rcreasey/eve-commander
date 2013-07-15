@@ -36,5 +36,11 @@ div.navbar.navbar-fixed-top
                 a(href='/reactions/alchemy') Alchemy
               li
                 a(href='/reactions/complex') Complex
-          li
-            a(href='/foreman') Foreman
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown') Tools
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='/tools/foreman') Mining Foreman
+              li
+                a(href='/tools/appraisal') Inventory Appraisal

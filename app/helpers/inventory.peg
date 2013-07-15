@@ -1,0 +1,24 @@
+start
+  = log_line+
+
+log_line
+  = item:item count:count category:category weight:weight 
+  { return {"name": item, "count": count, "category": category, "weight": weight}; }
+
+item
+  = item:[a-zA-Z' ']+ delimiter* { return item.join(''); }
+
+count
+  = count:[0-9]+ delimiter+ { return parseFloat(count.join('')); }
+
+category
+  = category:[a-zA-Z' ']+ delimiter+ { return category.join(''); }
+
+weight
+  = weight:[0-9\.]+ line_ending+ { return parseFloat(weight.join('')); }
+
+line_ending
+  = " m3" delimiter? { return; }
+
+delimiter
+  = [\t\r\n]+
