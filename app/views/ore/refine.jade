@@ -14,6 +14,14 @@ block context
         dataType: "json"
         success: (data) ->
           $('.loading').remove()
+          thead = $('thead tr')
+          thead.append $("<th>").text("Batch")
+          thead.append $("<th>").text("Weight")
+          $.each data.component_index, (i, component) ->
+            th = $('<th>').addClass( classify(component) )
+            th.text component
+            thead.append th
+
           tbody = $('tbody')
           $.each data.ores, (i, ore) ->
             tr = $('<tr>')
@@ -22,28 +30,19 @@ block context
             tr.append $("<td>").text(ore.batch)
             tr.append $("<td>").text(ore.weight)
             $.each ore.refines, (i, refine) ->
-              td = $("<td>").addClass(data.mineral_index[i].toLowerCase()).text(refine)
+              td = $("<td>").addClass( classify(data.component_index[i]) ).text(refine)
               tr.append td
 
             tbody.append tr
           
-          find_optimal(data.mineral_index)
+          find_optimal(data.component_index)
           toggle_ores()
 
   table.table.table-condensed.table-ore
     thead
       tr
         th Ore
-        th Batch
-        th Weight
-        th.tritanium Tritanium
-        th.pyerite Pyerite
-        th.mexallon Mexallon
-        th.isogen Isogen
-        th.nocxium Nocxium
-        th.zydrine Zydrine
-        th.megacyte Megacyte
-        th.morphite Morphite
+ 
     tbody
       tr.loading
         th(colspan=12)     

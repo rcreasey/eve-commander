@@ -1,8 +1,8 @@
-.btn-group
-  button#toggle_ores.btn(onclick="toggle_ores()") Ore Variants
-
 :coffeescript
   root = exports ? this
+  root.classify = (name) ->
+    return name.toLowerCase().replace(' ','-')
+
   root.toggle_ores = ->
     if $('th.ore-icon').length
       hide_variants()
@@ -20,9 +20,9 @@
   root.compare = (a, b) ->
     parseFloat($(b).text()) - parseFloat($(a).text())
 
-  root.find_optimal = (mineral_index) -> 
+  root.find_optimal = (component_index) -> 
 
-    $.each mineral_index, (i, ore) -> 
+    $.each component_index, (i, ore) -> 
       ore_class = ore.toLowerCase()
       columns = $('tbody').find('td.'+ore_class).sort(compare)
       columns.slice(0,3).addClass('optimal')

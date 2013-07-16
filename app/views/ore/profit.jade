@@ -25,13 +25,13 @@ block context
             tr.append $("<td>").text(ore.weight)
             $.each ore.refines, (i, refine) ->
               td = $("<td>").text(mineral_per_meter(ore.weight, ore.batch, refine))
-              td.addClass(data.mineral_index[i].toLowerCase())
+              td.addClass(data.component_index[i].toLowerCase())
               tr.append td
 
             tbody.append tr
           
           fetch_prices '/data/minerals.json'
-          find_optimal(data.mineral_index)
+          find_optimal(data.component_index)
           toggle_ores()
             
   table.table.table-condensed.table-ore
