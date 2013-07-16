@@ -31,4 +31,4 @@
     per_meter = 1 / parseFloat(weight)
     refine_per_meter = parseFloat(batch) / per_meter
     mineral_per_meter = parseFloat(refine) / refine_per_meter
-    return mineral_per_meter.toFixed(3)
+    return parseFloat(mineral_per_meter.toFixed(2))

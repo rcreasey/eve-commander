@@ -12,10 +12,10 @@ count
   = count:[0-9]+ delimiter+ { return parseFloat(count.join('')); }
 
 category
-  = category:[a-zA-Z' ']+ delimiter+ { return category.join(''); }
+  = category:[a-zA-Z' ']+ delimiter* { return category.join(''); }
 
 weight
-  = weight:[0-9\.]+ line_ending+ { return parseFloat(weight.join('')); }
+  = weight:[0-9\.]+ line_ending* { return parseFloat(weight.join('')); }
 
 line_ending
   = " m3" delimiter? { return; }

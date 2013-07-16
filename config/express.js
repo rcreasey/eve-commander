@@ -1,6 +1,7 @@
 var express = require('express')
   , helpers = require('../app/helpers/helpers.js')
   , lessMiddleware = require('less-middleware')
+  , fs = require('fs')
 
 module.exports = function (app, config) {
   app.set('showStackError', true)
@@ -43,3 +44,11 @@ module.exports = function (app, config) {
 
   })
 }
+
+require.extensions['.peg'] = function (module, filename) {
+    module.exports = fs.readFileSync(filename, 'utf8');
+};
+
+require.extensions['.json'] = function (module, filename) {
+    module.exports = JSON.parse(fs.readFileSync(filename, 'utf8'));
+};

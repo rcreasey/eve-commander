@@ -21,7 +21,8 @@
     "coffee-script": "1.6.x",
     "async": "0.2.8",
     "underscore": "1.4.x",
-    "moment": "2.0.x"
+    "moment": "2.0.x",
+    "pegjs": "0.7.x"
   },
   "devDependencies": {
     "nodemon": "0.7.x",

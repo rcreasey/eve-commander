@@ -3,5 +3,45 @@ extends layout
 block context
   h3 Inventory Appraisal
 
+  :coffeescript
+    root = exports ? this
+    root.classify = (name) ->
+      return name.toLowerCase().replace(' ','-')
 
-  pre= inventory
+    root.approximate = (number) ->
+      return parseFloat( number.toFixed(2) )
+
+    $(document).ready ->
+      $.ajax
+        type: "GET"
+        url: "/data/inventory.json"
+        dataType: "json"
+        success: (data) ->
+          $('.loading').remove()
+          thead = $('thead tr')
+          $.each data.component_index, (i, component) ->
+            th = $('<th>').addClass( classify(component) )
+            th.text component
+            thead.append th
+
+          tbody = $('tbody')
+          $.each data.inventory, (i, item) ->
+            tr = $('<tr>')
+            tr.addClass('item-class')
+            tr.append $("<th>").text(item.name)
+            $.each item.refines, (i, refine) ->
+              td = $("<td>").addClass( classify(data.component_index[i]) ).text( approximate(refine) ) 
+              tr.append td
+
+            tbody.append tr
+
+  table.table.table-condensed.table-ore
+    thead
+      tr
+        th Item
+    tbody
+      tr.loading
+        th(colspan=12)     
+          h4 
+            i.icon-spinner.icon-spin.icon-large
+            | Calculating inventory appraisal...

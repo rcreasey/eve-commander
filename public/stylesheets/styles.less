@@ -8,6 +8,26 @@ body {
   }
 }
 
+@rotation: -45deg;
+@rotation_percent: 50% 50%;
+@rotation_integer: 3;
+.rotate {
+  background-color: #f9f9f9;
+  background-image: none !important;
+  height: 70px;
+  -webkit-transform: rotate(@rotation);
+  -moz-transform: rotate(@rotation);
+  -ms-transform: rotate(@rotation);
+  -o-transform: rotate(@rotation);
+  transform: rotate(@rotation);
+  -webkit-transform-origin: @rotation_percent;
+  -moz-transform-origin: @rotation_percent;
+  -ms-transform-origin: @rotation_percent;
+  -o-transform-origin: @rotation_percent;
+  transform-origin: @rotation_percent;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation_integer);
+}
+
 .table {
   margin-top: 1em;
 }

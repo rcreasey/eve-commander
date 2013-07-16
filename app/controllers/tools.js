@@ -1,3 +1,5 @@
+var PEG = require("pegjs");
+
 // GET /tools/foreman
 exports.foreman = function (req, res) {
   res.render('tools/foreman', {title: 'Mining Operations Foreman'})
@@ -10,6 +12,9 @@ exports.appraisal = function (req, res) {
 
 // POST /tools/appraisal
 exports.appraise = function (req, res) {
-  console.log("Data: %j", req.body.inventory)
-  res.render('tools/appraise', {title: 'Inventory Appraisal', inventory: req.body.inventory})
+  var inventory_peg = require('../helpers/inventory.peg')
+  var mock_inventory = require('../../public/data/inventory.json')
+  var parser = PEG.buildParser( inventory_peg );
+  inventory_items = parser.parse(req.body.inventory.replace(/,/g,''));
+  res.render('tools/appraise', {title: 'Inventory Appraisal', inventory: inventory_items})
 }
