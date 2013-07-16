@@ -29,7 +29,7 @@ block context
             tr.append $("<th>").text(ice.name)
             tr.append $("<td>").text(ice.batch)
             tr.append $("<td>").text(ice.weight)
-            $.each ice.refines, (i, volume) ->
+            $.each ice.by_volume, (i, volume) ->
               td = $("<td>").addClass( classify(data.component_index[i]) ).text(volume)
               tr.append td
 

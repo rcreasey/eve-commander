@@ -1,21 +1,23 @@
 :coffeescript
   root = exports ? this
+  root.classify = (name) ->
+    return name.toLowerCase().replace(' ','-')
+
+  root.compare = (a, b) ->
+    parseFloat($(b).text()) - parseFloat($(a).text())
+
+  root.find_optimal = (component_index) -> 
+    $.each component_index, (i, item) -> 
+      item_class = classify(item)
+      columns = $('tbody').find('td.'+item_class).sort(compare)
+      columns.slice(0,1).addClass('optimal')
+
   root.add_icons = ->
     $.each $('tbody tr.ice-class th'), (i, e) ->
-      ice_class = $(e).text().toLowerCase().replace(' ','-')
+      ice_class = classify($(e).text())
       ice_icon = $('<th class="ice-icon ' + ice_class + '">&#160;</th>')
       if $(e).parent().next().attr('class') == 'ice-variant'
         ice_icon.attr('rowspan', '2')
       $(e).before ice_icon
     
     $('thead tr th:first-child').before $('<th class="ice-icon">&#160;</th>')
-
-  root.compare = (a, b) ->
-    parseFloat($(b).text()) - parseFloat($(a).text())
-
-  root.find_optimal = (product_index) -> 
-    $.each product_index, (i, ice) -> 
-      ice_class = ice.toLowerCase().replace(' ','-')
-      columns = $('tbody').find('td.'+ice_class).sort(compare)
-      columns.slice(0,1).addClass('optimal')
-

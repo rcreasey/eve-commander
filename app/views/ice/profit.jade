@@ -4,7 +4,7 @@ block context
   h3 #{title}
   p This chart shows the price of a given ice block, based on its product's price.
 
-  include ../includes/common_functions
+  include ../includes/market_script
   include table_script
 
   :coffeescript
@@ -16,23 +16,26 @@ block context
         success: (data) ->
           $('.loading').remove()
           thead = $('thead tr')
-          $.each data.product_index, (i, product) ->
-            th = $('<th>').addClass(product.toLowerCase().replace(' ','-'))
-            th.text product
-            thead.append th    
+          thead.append $("<th>").text("Batch")
+          thead.append $("<th>").text("Weight")
+          $.each data.component_index, (i, component) ->
+            th = $('<th>').addClass( classify(component) )
+            th.text component
+            thead.append th
 
           tbody = $('tbody')
           $.each data.ices, (i, ice) ->
             tr = $('<tr>')
             tr.addClass(if (ice.variant) then 'ice-variant' else 'ice-class')
             tr.append $("<th>").text(ice.name)
-            $.each ice.refines, (i, refine) ->
-              td = $("<td>").addClass(data.product_index[i].toLowerCase().replace(' ','-')).text(refine)
+            tr.append $("<td>").text(ice.batch)
+            tr.append $("<td>").text(ice.weight)
+            $.each ice.by_volume, (i, volume) ->
+              td = $("<td>").addClass( classify(data.component_index[i]) ).text(volume)
               tr.append td
 
             tbody.append tr
           
-          add_icons()
 
           fetch_prices '/data/products.json',  ->
             $('thead tr').append $('<th>').addClass('total').text('Total')
@@ -42,7 +45,10 @@ block context
                 total += parseFloat($(td).text())
               $(row).append $('<td>').addClass('total').text(total.toFixed(2))
           
-            find_optimal(data.product_index.concat(['total']))
+            find_optimal(data.component_index.concat(['total']))
+
+          add_icons()
+
 
 
   table.table.table-condensed.table-ice

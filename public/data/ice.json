@@ -1,5 +1,5 @@
 {
-  "product_index": 
+  "component_index": 
     [ "Heavy Water"
     , "Liquid Ozone"
     , "Strontium"
@@ -12,54 +12,66 @@
         "id": 16264
       , "name": "Blue Ice"
       , "refines": [50,25,0,300,0,0,0]
+      , "by_volume": [0.05,0.025,0,0.3,0,0,0]
     },{
         "id": 17975
       , "name": "Thick Blue Ice"
       , "variant": true
       , "refines": [75,40,1,350,0,0,0]
+      , "by_volume": [0.07,0.04,0.001,0.35,0,0,0]
     },{
         "id": 16262
       , "name": "Clear Icile"
       , "refines": [50,25,0,0,300,0,0]
+      , "by_volume": [0.05,0.025,0,0,0.3,0,0]
     },{
         "id": 17978
       , "name": "Enriched Clear Icile"
       , "variant": true
       , "refines": [75,40,1,0,350,0,0]
+      , "by_volume": [0.07,0.04,0.001,0,0.35,0,0]
     },{
         "id": 16267
       , "name": "Dark Glitter"
       , "refines": [500,1000,50,0,0,0,0]
+      , "by_volume": [0.05,1,0.05,0,0,0,0]
     },{
         "id": 16268
       , "name": "Gelidus"
       , "refines": [500,1000,50,0,0,0,0]
+      , "by_volume": [0.05,1,0.05,0,0,0,0]
     },{
         "id": 16263
       , "name": "Glacial Mass"
-      , "refines": [50,25,0,0,0,300,0]
+      , "refines": [50,25,0,0,0,250,0]
+      , "by_volume": [0.05,0.025,0,0,0,0.25,0]
     },{
         "id": 17977
       , "name": "Smooth Glacial Mass"
       , "variant": true
-      , "refines": [75,40,1,0,0,250,0]
+      , "refines": [75,40,1,0,0,300,0]
+      , "by_volume": [0.07,0.04,0,0,0,0.3,0]
     },{
         "id": 16266
       , "name": "Glare Crust"
       , "refines": [1000,500,25,0,0,0,0]
+      , "by_volume": [1,0.5,0.025,0,0,0,0]
     },{
         "id": 16269
       , "name": "Krystallos"
       , "refines": [125,500,125,0,0,0,0]
+      , "by_volume": [0.125,0.5,0.125,0,0,0,0]
     },{
         "id": 16265
       , "name": "White Glaze"
       , "refines": [50,25,0,0,0,0,300]
+      , "by_volume": [0.05,0.025,0,0,0,0,0.3]
     },{
         "id": 17976
       , "name": "Pristine White Glaze"
       , "variant": true
       , "refines": [75,40,1,0,0,0,350]
+      , "by_volume": [0.075,0.04,0.001,0,0,0,0.35]
     }
   ]
 }

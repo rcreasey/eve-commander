@@ -3,28 +3,18 @@
   root.classify = (name) ->
     return name.toLowerCase().replace(' ','-')
 
-  root.add_icons = ->
-    $.each $('tbody tr.ore-class th'), (i, e) ->
-      ore_class = $(e).text().toLowerCase().replace(' ','_')
-      $(e).before $('<th class="ore-icon ' + ore_class + '" rowspan="3">&#160;</th>')
-    
-    $('thead tr th:first-child').before $('<th class="ore-icon">&#160;</th>')
-
-  root.hide_variants = ->
-    $('tbody tr.ore-class').nextUntil('tr.ore-class').toggle()
-
   root.compare = (a, b) ->
     parseFloat($(b).text()) - parseFloat($(a).text())
 
   root.find_optimal = (component_index) -> 
-
-    $.each component_index, (i, ore) -> 
-      ore_class = ore.toLowerCase()
-      columns = $('tbody').find('td.'+ore_class).sort(compare)
+    $.each component_index, (i, item) -> 
+      item_class = classify(item)
+      columns = $('tbody').find('td.'+item_class).sort(compare)
       columns.slice(0,3).addClass('optimal')
 
-  root.mineral_per_meter = (weight, batch, refine) ->
-    per_meter = 1 / parseFloat(weight)
-    refine_per_meter = parseFloat(batch) / per_meter
-    mineral_per_meter = parseFloat(refine) / refine_per_meter
-    return parseFloat(mineral_per_meter.toFixed(2))
+  root.add_icons = ->
+    $.each $('tbody tr.ore-class th'), (i, e) ->
+      ore_class = classify($(e).text())
+      $(e).before $('<th class="ore-icon ' + ore_class + '" rowspan="3">&#160;</th>')
+    
+    $('thead tr th:first-child').before $('<th class="ore-icon">&#160;</th>')
