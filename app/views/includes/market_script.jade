@@ -12,9 +12,6 @@
       @median = parseFloat(median)
       @percentile = parseFloat(percentile)
 
-  root.toggle_ores = ->
-    hide_ores()
-
   root.fetch_prices = (url, callback) -> 
     $.ajax
       url: url

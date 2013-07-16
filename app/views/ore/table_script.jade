@@ -3,16 +3,12 @@
   root.classify = (name) ->
     return name.toLowerCase().replace(' ','-')
 
-  root.toggle_ores = ->
-    if $('th.ore-icon').length
-      hide_variants()
-      $('th.ore-icon').remove()
-    else
-      $.each $('tbody tr.ore-class th'), (i, e) ->
-        ore_class = $(e).text().toLowerCase().replace(' ','_')
-        $(e).before $('<th class="ore-icon ' + ore_class + '" rowspan="3">&#160;</th>')
-      
-      $('thead tr th:first-child').before $('<th class="ore-icon">&#160;</th>')
+  root.add_icons = ->
+    $.each $('tbody tr.ore-class th'), (i, e) ->
+      ore_class = $(e).text().toLowerCase().replace(' ','_')
+      $(e).before $('<th class="ore-icon ' + ore_class + '" rowspan="3">&#160;</th>')
+    
+    $('thead tr th:first-child').before $('<th class="ore-icon">&#160;</th>')
 
   root.hide_variants = ->
     $('tbody tr.ore-class').nextUntil('tr.ore-class').toggle()
