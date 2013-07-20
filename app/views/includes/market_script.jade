@@ -12,6 +12,9 @@
       @median = parseFloat(median)
       @percentile = parseFloat(percentile)
 
+  root.classify = (name) ->
+    return name.toLowerCase().replace(' ','-')
+
   root.fetch_prices = (url, callback) -> 
     $.ajax
       url: url
@@ -42,13 +45,14 @@
               med = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > median").text()
               per = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > percentile").text()
               item.update_values(vol, avg, max, min, std, med, per)
-              th = $('th.'+item.name.toLowerCase().replace(' ','-'))
-              th.append $('<div>').text( item.avg ).addClass('avg')
-              th.height(95)
 
-              $.each $('td.'+item.name.toLowerCase().replace(' ','-')), (i, mineral) ->
-                quantity = parseFloat($(mineral).text())
-                $(mineral).text (quantity * item.avg).toFixed(2)
+              $.each $('td.'+ classify(item.name)), (i, cell) ->
+                if $(cell).find('div.input')
+                  quantity =  parseFloat( (parseFloat($('div.input').text()) * item.avg).toFixed(2) )
+                  $(cell).append $('<div>').addClass('buy avg').text( quantity )
+                else
+                  quantity = parseFloat($(cell).text())
+                  $(cell).text parseFloat((quantity * item.avg).toFixed(2))
 
             callback.call() if callback
 

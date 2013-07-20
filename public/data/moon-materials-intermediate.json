@@ -1,0 +1,230 @@
+[
+  {
+    "volume": "100",
+    "id": 16663,
+    "name": "Caesarium Cadmide",
+    "description": "A dark-golden hued alloy composed of cadmium and caesium.  Often confused with tritanium due to its tint.  An essential ingredient in various composites and condensates."
+  },
+  {
+    "volume": "100",
+    "id": 16659,
+    "name": "Carbon Polymers",
+    "description": "A synthetic carbon compound created from raw hydrocarbons and silicate rock materials.  Important ingredients in a variety of carbon- and gel-based composites."
+  },
+  {
+    "volume": "100",
+    "id": 16660,
+    "name": "Ceramic Powder",
+    "description": "A fine powder synthesized from various natural gases and solids through reactant processes.  Used as a strengthening agent in both armor plating and shield generators, as well as constituting an important part of many other composite materials."
+  },
+  {
+    "volume": "100",
+    "id": 16655,
+    "name": "Crystallite Alloy",
+    "description": "A polynuclear heterometallic compound created from cobalt and cadmium.  Crystallite alloys are a fundamental building block in the creation of crystalline composites."
+  },
+  {
+    "volume": "100",
+    "id": 16668,
+    "name": "Dysporite",
+    "description": "Quicksilver mixed with dysprosium forms the soft but extremely resilient dysporite, an amalgamatic alloy which plays a key role in most advanced sensor and reactor technologies."
+  },
+  {
+    "volume": "100",
+    "id": 16656,
+    "name": "Fernite Alloy",
+    "description": "An intensely durable and extremely versatile alloy, Fernite, when combined with certain other materials, is a crucial stepping stone in the creation of a whole host of advanced technologies."
+  },
+  {
+    "volume": "100",
+    "id": 16669,
+    "name": "Ferrofluid",
+    "description": "Ferrofluids are superparamagnetic fluids containing tiny particles of magnetic solids suspended in liquid.  The primary component in the creation of ferrogels."
+  },
+  {
+    "volume": "100",
+    "id": 17769,
+    "name": "Fluxed Condensates",
+    "description": "When combined with other materials and alloys, fluxed condensates help contribute to a unique quantum state highly conducive to efficient reactor operation."
+  },
+  {
+    "volume": "100",
+    "id": 16665,
+    "name": "Hexite",
+    "description": "A chemical compound, formed through electrosporadic oxidization of chromium and platinum.  Has a wide range of applications in the production of advanced technology and is highly sought-after by industrial manufacturers."
+  },
+  {
+    "volume": "100",
+    "id": 16666,
+    "name": "Hyperflurite",
+    "description": "Hyperflurite is one of the most radioactive substances known to man.  Composed of a mixture of radioactive metals and raw hydrocarbons, this luminescent goop provides catalysis for a variety of generative and reactive machine processes."
+  },
+  {
+    "volume": "100",
+    "id": 16667,
+    "name": "Neo Mercurite",
+    "description": "A silvery, shimmering liquid compound, Neo Mercurite is a crucial element in many forms of advanced sensor and processor technology."
+  },
+  {
+    "volume": "100",
+    "id": 16662,
+    "name": "Platinum Technite",
+    "description": "An intensely resilient alloy composed of platinum and technetium.  Highly sought-after in the machinery and armament industries."
+  },
+  {
+    "volume": "100",
+    "id": 33337,
+    "name": "Promethium Mercurite",
+    "description": "A metallic radioactive compound, Promethium Mercurite emits a faint green glow visible to the naked eye. It is a crucial part of a new generation of processors and capacitor units being developed by the Amarr Empire."
+  },
+  {
+    "volume": "100",
+    "id": 17960,
+    "name": "Prometium",
+    "description": "A highly radioactive cadmium-promethium compound, used as a catalytic agent in the manufacturing of thrusters, reactor units and shield emitters, among other things."
+  },
+  {
+    "volume": "100",
+    "id": 16657,
+    "name": "Rolled Tungsten Alloy",
+    "description": "An extremely strong compound, made from tungsten rolled in a sheath of platinum.  A crucial component in the creation of carbides which have a wide field of utility in the manufacture of various equipment."
+  },
+  {
+    "volume": "100",
+    "id": 16658,
+    "name": "Silicon Diborite",
+    "description": "A mineral composite which, in large quantities, gives off a distinct crystalline glow.  When combined with other composites, is usable for a variety of manufacturing purposes."
+  },
+  {
+    "volume": "100",
+    "id": 16664,
+    "name": "Solerium",
+    "description": "When chromium and caesium are combined with raw silicates in the proper proportions, Solerium is created.  Since its initial discovery, Solerium's uniquely shifting dark-to-bright red hue has prompted poet and musician alike to create hymns in praise of its uniquely shifting deep red hue."
+  },
+  {
+    "volume": "100",
+    "id": 16661,
+    "name": "Sulfuric Acid",
+    "description": "A strong mineral acid, used in many chemical reactions and production processes.  One of the most widely used chemicals in history."
+  },
+  {
+    "volume": "100",
+    "id": 33336,
+    "name": "Thulium Hafnite",
+    "description": "Despite its unremarkable gray appearance, Thulium Hafnite has proven to be extremely effective as shielding against electromagnetic radiation and free neutrons. It is a valuable component in the production of processor and capacitor technologies, especially in the Gallente Federation."
+  },
+  {
+    "volume": "100",
+    "id": 16654,
+    "name": "Titanium Chromide",
+    "description": "Titanium Chromide is in high demand among technicians and manufacturers for its unique combination of strength, light weight and catalytic potential."
+  },
+  {
+    "volume": "100",
+    "id": 32824,
+    "name": "Unrefined Caesarium Cadmide",
+    "description": "A dark-golden hued alloy composed of cadmium and caesium. Often confused with tritanium due to its tint. An essential ingredient in various composites and condensates."
+  },
+  {
+    "volume": "100",
+    "id": 32829,
+    "name": "Unrefined Crystallite Alloy",
+    "description": "A polynuclear heterometallic compound created from cobalt and cadmium. Crystallite alloys are a fundamental building block in the creation of crystalline composites."
+  },
+  {
+    "volume": "100",
+    "id": 29660,
+    "name": "Unrefined Dysporite",
+    "description": "Quicksilver mixed with dysprosium forms the soft but extremely resilient dysporite, an amalgamatic alloy which plays a key role in most advanced sensor and reactor technologies."
+  },
+  {
+    "volume": "100",
+    "id": 32828,
+    "name": "Unrefined Fernite Alloy",
+    "description": "An intensely durable and extremely versatile alloy, Fernite, when combined with certain other materials, is a crucial stepping stone in the creation of a whole host of advanced technologies."
+  },
+  {
+    "volume": "100",
+    "id": 29663,
+    "name": "Unrefined Ferrofluid",
+    "description": "Ferrofluids are superparamagnetic fluids containing tiny particles of magnetic solids suspended in liquid.  The primary component in the creation of ferrogels."
+  },
+  {
+    "volume": "100",
+    "id": 29659,
+    "name": "Unrefined Fluxed Condensates",
+    "description": "When combined with other materials and alloys, fluxed condensates help contribute to a unique quantum state highly conducive to efficient reactor operation."
+  },
+  {
+    "volume": "100",
+    "id": 32825,
+    "name": "Unrefined Hexite",
+    "description": "A chemical compound, formed through electrosporadic oxidization of chromium and platinum. Has a wide range of applications in the production of advanced technology and is highly sought-after by industrial manufacturers."
+  },
+  {
+    "volume": "100",
+    "id": 29664,
+    "name": "Unrefined Hyperflurite",
+    "description": "Hyperflurite is one of the most radioactive substances known to man.  Composed of a mixture of radioactive metals and raw hydrocarbons, this luminescent goop provides catalysis for a variety of generative and reactive machine processes."
+  },
+  {
+    "volume": "100",
+    "id": 29661,
+    "name": "Unrefined Neo Mercurite",
+    "description": "A silvery, shimmering liquid compound, Neo Mercurite is a crucial element in many forms of advanced sensor and processor technology."
+  },
+  {
+    "volume": "100",
+    "id": 32822,
+    "name": "Unrefined Platinum Technite",
+    "description": "An intensely resilient alloy composed of platinum and technetium. Highly sought-after in the machinery and armament industries."
+  },
+  {
+    "volume": "100",
+    "id": 33338,
+    "name": "Unrefined Promethium Mercurite",
+    "description": "A metallic radioactive compound, Promethium Mercurite emits a faint green glow visible to the naked eye. It is a crucial part of a new generation of processors and capacitor units being developed by the Amarr Empire."
+  },
+  {
+    "volume": "100",
+    "id": 29662,
+    "name": "Unrefined Prometium",
+    "description": "A highly radioactive cadmium-promethium compound, used as a catalytic agent in the manufacturing of thrusters, reactor units and shield emitters, among other things."
+  },
+  {
+    "volume": "100",
+    "id": 32826,
+    "name": "Unrefined Rolled Tungsten Alloy",
+    "description": "An extremely strong compound, made from tungsten rolled in a sheath of platinum. A crucial component in the creation of carbides which have a wide field of utility in the manufacture of various equipment."
+  },
+  {
+    "volume": "100",
+    "id": 32823,
+    "name": "Unrefined Solerium",
+    "description": "When chromium and caesium are combined with raw silicates in the proper proportions, Solerium is created. Since its initial discovery, Solerium's uniquely shifting dark-to-bright red hue has prompted poet and musician alike to create hymns in praise of its uniquely shifting deep red hue."
+  },
+  {
+    "volume": "100",
+    "id": 33339,
+    "name": "Unrefined Thulium Hafnite",
+    "description": "Despite its unremarkable gray appearance, Thulium Hafnite has proven to be extremely effective as shielding against electromagnetic radiation and free neutrons. It is a valuable component in the production of processor and capacitor technologies, especially in the Gallente Federation."
+  },
+  {
+    "volume": "100",
+    "id": 32827,
+    "name": "Unrefined Titanium Chromide",
+    "description": "Titanium Chromide is in high demand among technicians and manufacturers for its unique combination of strength, light weight and catalytic potential."
+  },
+  {
+    "volume": "100",
+    "id": 32821,
+    "name": "Unrefined Vanadium Hafnite",
+    "description": "A stable binary compound composed of vanadium and hafnium. Performs a variety of catalytic functions, and is an important intermediate for more complex construction processes."
+  },
+  {
+    "volume": "100",
+    "id": 17959,
+    "name": "Vanadium Hafnite",
+    "description": "A stable binary compound composed of vanadium and hafnium.  Performs a variety of catalytic functions, and is an important intermediate for more complex construction processes."
+  }
+]

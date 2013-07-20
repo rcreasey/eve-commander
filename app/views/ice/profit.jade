@@ -35,7 +35,6 @@ block context
               tr.append td
 
             tbody.append tr
-          
 
           fetch_prices '/data/products.json',  ->
             $('thead tr').append $('<th>').addClass('total').text('Total')

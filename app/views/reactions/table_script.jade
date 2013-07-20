@@ -1,0 +1,4 @@
+:coffeescript
+  root = exports ? this
+  root.classify = (name) ->
+    return name.toLowerCase().replace /\s+/g, '-'

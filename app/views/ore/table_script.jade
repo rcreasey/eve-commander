@@ -1,7 +1,7 @@
 :coffeescript
   root = exports ? this
   root.classify = (name) ->
-    return name.toLowerCase().replace(' ','-')
+    return name.toLowerCase().replace /\s+/g, '-'
 
   root.compare = (a, b) ->
     parseFloat($(b).text()) - parseFloat($(a).text())

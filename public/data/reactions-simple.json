@@ -1,170 +1,152 @@
-[
-  {
-      "name": "Sulfuric Acid"
-    , "id": 16661
-    , "components": [
-        {"name": "Evaporite Deposits", "id": 16635}
-      , {"name": "Atmospheric Gases", "id": 16634}
-    ]
-  },
-  {
-      "name": "Silicon Diborite"
-    , "id": 16658
-    , "components": [
-        {"name": "Evaporite Deposits", "id": 16635}
-      , {"name": "Silicates", "id": 16636}
-    ]
-  },
-  {
-      "name": "Ceramic Powder"
-    , "id": 16660
-    , "components": [
-        {"name": "Evaporite Deposits", "id": 16635}
-      , {"name": "Silicates", "id": 16636}
-    ]
-  },  
-  {
-      "name": "Carbon Polymers"
-    , "id": 16659
-    , "components": [
-        {"name": "Hydrocarbons", "id": 16633}
-      , {"name": "Silicates", "id": 16636}
-    ]
-  },
-  {
-      "name": "Titanium Chromide"
-    , "id": 16654
-    , "components": [
-        {"name": "Titanium", "id": 16638}
-      , {"name": "Chromium", "id": 16641}
-    ]
-  },        
-  {
-      "name": "Crystallite Alloy"
-    , "id": 16655
-    , "components": [
-        {"name": "Cadmium", "id": 16643}
-      , {"name": "Cobalt", "id": 16640}
-    ]
-  },       
-  {
-      "name": "Fernite Alloy"
-    , "id": 16656
-    , "components": [
-        {"name": "Vanadium", "id": 16642}
-      , {"name": "Scandium", "id": 16639}
-    ]
-  },
-  {
-      "name": "Rolled Tungsten Alloy"
-    , "id": 16657
-    , "components": [
-        {"name": "Platinum", "id": 16644}
-      , {"name": "Tungsten", "id": 16637}
-    ]
-  },
-  {
-      "name": "Platinum Technite"
-    , "id": 16662
-    , "components": [
-        {"name": "Technetium", "id": 16649}
-      , {"name": "Platinum", "id": 16644}
-    ]
-  },
-  {
-      "name": "Caesarium Cadmide"
-    , "id": 16663
-    , "components": [
-        {"name": "Caesium", "id": 16647}
-      , {"name": "Cadmium", "id": 16643}
-    ]
-  },
-  {
-      "name": "Solerium"
-    , "id": 16664
-    , "components": [
-        {"name": "Caesium", "id": 16647}
-      , {"name": "Chromium", "id": 16641}
-    ]
-  },
-  {
-      "name": "Hexite"
-    , "id": 16665
-    , "components": [
-        {"name": "Platinum", "id": 16644}
-      , {"name": "Chromium", "id": 16641}
-    ]
-  },
-  {
-      "name": "Hyperflurite"
-    , "id": 16666
-    , "components": [
-        {"name": "Platinum", "id": 16644}
-      , {"name": "Chromium", "id": 16641}
-    ]
-  },
-  {
-      "name": "Neo Mercurite"
-    , "id": 16667
-    , "components": [
-        {"name": "Neodymium", "id": 16651}
-      , {"name": "Mercury", "id": 16646}
-    ]
-  },
-  {
-      "name": "Dysporite"
-    , "id": 16668
-    , "components": [
-        {"name": "Cadmium", "id": 16643}
-      , {"name": "Mercury", "id": 16646}
-    ]
-  },
-  {
-      "name": "Fluxed Condensates"
-    , "id": 17769
-    , "components": [
-        {"name": "Neodymium", "id": 16651}
-      , {"name": "Thulium", "id": 16653}
-    ]
-  },
-  {
-      "name": "Ferrofluid"
-    , "id": 16669
-    , "components": [
-        {"name": "Cadmium", "id": 16643}
-      , {"name": "Hafnium", "id": 16648}
-    ]
-  },
-  {
-      "name": "Thulium Hafnite"
-    , "id": 33336
-    , "components": [
-        {"name": "Thulium", "id": 16653}
-      , {"name": "Hafnium", "id": 16648}
-    ]
-  },  
-  {
-      "name": "Prometium"
-    , "id": 17960
-    , "components": [
-        {"name": "Promethium", "id": 16652}
-      , {"name": "Cadmium", "id": 16643}
-    ]
-  },
-  {
-      "name": "Promethium Mercurite"
-    , "id": 33337
-    , "components": [
-        {"name": "Promethium", "id": 16652}
-      , {"name": "Mercury", "id": 16646}
-    ]
-  },
-  {
-      "name": "Vanadium Hafnite"
-    , "id": 33337
-    , "components": [
-        {"name": "Vanadium", "id": 16642}
-      , {"name": "Hafnium", "id": 16648}
-    ]
-  }
-]
+{
+  "component_index": [
+    "Atmospheric Gases"
+  , "Cadmium"
+  , "Caesium"
+  , "Chromium"
+  , "Cobalt"
+  , "Dysprosium"
+  , "Evaporite Deposits"
+  , "Hafnium"
+  , "Hydrocarbons"
+  , "Mercury"
+  , "Neodymium"
+  , "Platinum"
+  , "Promethium"
+  , "Scandium"
+  , "Silicates"
+  , "Technetium"
+  , "Thulium"
+  , "Titanium"
+  , "Tungsten"
+  , "Vanadium"
+  ],
+  "reactions": [
+    {
+        "name": "Sulfuric Acid"
+      , "id": 16661
+      , "batch": 200
+      , "components": [100,0,0,0,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Silicon Diborite"
+      , "id": 16658
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,100,0,0,0,0,0,0,0,100,0,0,0,0,0]
+    },
+    {
+        "name": "Ceramic Powder"
+      , "id": 16660
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,100,0,0,0,0,0,0,0,100,0,0,0,0,0]
+    },  
+    {
+        "name": "Carbon Polymers"
+      , "id": 16659
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,0,100,0,0,0,0,0,100,0,0,0,0,0]
+    },
+    {
+        "name": "Titanium Chromide"
+      , "id": 16654
+      , "batch": 200
+      , "components": [0,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,100,0,0]
+    },        
+    {
+        "name": "Crystallite Alloy"
+      , "id": 16655
+      , "batch": 200
+      , "components": [0,100,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    },       
+    {
+        "name": "Fernite Alloy"
+      , "id": 16656
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,0,0,0,0,0,0,100,0,0,0,0,0,100]
+    },
+    {
+        "name": "Rolled Tungsten Alloy"
+      , "id": 16657
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,0,0,0,0,100,0,0,0,0,0,0,100,0]
+    },
+    {
+        "name": "Platinum Technite"
+      , "id": 16662
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,0,0,0,0,100,0,0,0,100,0,0,0,0]
+    },
+    {
+        "name": "Caesarium Cadmide"
+      , "id": 16663
+      , "batch": 200
+      , "components": [0,100,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Solerium"
+      , "id": 16664
+      , "batch": 200
+      , "components": [0,0,100,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Hexite"
+      , "id": 16665
+      , "batch": 200
+      , "components": [0,0,0,100,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Hyperflurite"
+      , "id": 16666
+      , "batch": 200
+      , "components": [0,0,0,100,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Neo Mercurite"
+      , "id": 16667
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,0,0,100,100,0,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Dysporite"
+      , "id": 16668
+      , "batch": 200
+      , "components": [0,100,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Fluxed Condensates"
+      , "id": 17769
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,0,0,0,100,0,0,0,0,0,100,0,0,0]
+    },
+    {
+        "name": "Ferrofluid"
+      , "id": 16669
+      , "batch": 200
+      , "components": [0,100,0,0,0,0,0,100,0,0,0,0,0,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Thulium Hafnite"
+      , "id": 33336
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0,100,0,0,0]
+    },  
+    {
+        "name": "Prometium"
+      , "id": 17960
+      , "batch": 200
+      , "components": [0,100,0,0,0,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Promethium Mercurite"
+      , "id": 33337
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,0,0,100,0,0,100,0,0,0,0,0,0,0]
+    },
+    {
+        "name": "Vanadium Hafnite"
+      , "id": 33337
+      , "batch": 200
+      , "components": [0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,0,0,0,0,100]
+    }
+  ]
+}
