@@ -53,7 +53,9 @@ block context
                 delta = $('<i class="icon-4x pull-left">')
                 td.append delta
     
-                td.append $('<span>').addClass('amount').text( (sell - buy).toFixed(0) )
+                profit = (sell - buy).toFixed(0)
+                td.append $('<span>').addClass('amount').text( profit )
+                td.append $('<div>').addClass('margin').text( ((profit / sell) * 100).toFixed(0) + '%')
 
                 if (sell > buy)
                   $(row).addClass("optimal")
