@@ -19,7 +19,6 @@ block context
           thead.append $('<th>').text('Component')
           thead.append $('<th>').text('Component')
           thead.append $('<th>').text('Reaction')
-          thead.append $('<th>').text('Market')
 
           tbody = $('tbody')
           $.each data.reactions, (i, reaction) ->
@@ -42,6 +41,8 @@ block context
 
           fetch_prices '/data/moon-materials-raw.json', -> 
             fetch_prices '/data/moon-materials-intermediate.json', ->
+              $('thead').append $('<th>').text('Market')
+
               $.each $('tbody tr'), (i, row) ->
                 buy = 0
                 $.each $(row).find('.component'), (i, component) ->
