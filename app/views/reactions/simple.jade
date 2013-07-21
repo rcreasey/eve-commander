@@ -14,7 +14,6 @@ block context
         url: "/data/reactions-simple.json"
         dataType: "json"
         success: (data) ->
-          $('.loading').remove()
           thead = $('thead').append $('<tr>')
           thead.append $('<th>').text('Component')
           thead.append $('<th>').text('Component')
@@ -65,12 +64,14 @@ block context
 
                 $(row).append td
 
+              $('.loading').remove()
+
   table.table.table-bordered.table-reactions
     thead
 
     tbody
-      tr.loading
-        th
+      tr.loading.info
+        td(colspan=3)
           
           h4 
             i.icon-spinner.icon-spin.icon-large
