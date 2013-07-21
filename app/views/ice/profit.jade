@@ -30,7 +30,7 @@ block context
             tr.append $("<th>").text(ice.name)
             tr.append $("<td>").text(ice.batch)
             tr.append $("<td>").text(ice.weight)
-            $.each ice.by_volume, (i, volume) ->
+            $.each ice.refines, (i, volume) ->
               td = $("<td>").addClass( classify(data.component_index[i]) ).text(volume)
               tr.append td
 
@@ -41,8 +41,10 @@ block context
             $.each $('tbody tr'), (i, row) ->
               total = 0.0
               $.each $(row).find('td'), (i, td) ->
-                total += parseFloat($(td).text())
-              $(row).append $('<td>').addClass('total').text(total.toFixed(2))
+                total += parseFloat($(td).text()) if $(td).text() != ""
+              td = $('<td>').addClass('total')
+              $(td).text(total.toFixed(2))
+              $(row).append td
           
             find_optimal(data.component_index.concat(['total']))
 

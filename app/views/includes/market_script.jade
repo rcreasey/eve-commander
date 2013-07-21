@@ -47,12 +47,12 @@
               item.update_values(vol, avg, max, min, std, med, per)
 
               $.each $('td.'+ classify(item.name)), (i, cell) ->
-                if $(cell).find('div.input')
-                  quantity =  parseFloat( (parseFloat($('div.input').text()) * item.avg).toFixed(2) )
-                  $(cell).append $('<div>').addClass('buy avg').text( quantity )
+                if $(cell).find('div.input').length
+                  quantity =  parseFloat( (parseFloat($('div.input').text()) * item.max).toFixed(2) )
+                  $(cell).append $('<div>').addClass('buy max').text( quantity )
                 else
                   quantity = parseFloat($(cell).text())
-                  $(cell).text parseFloat((quantity * item.avg).toFixed(2))
+                  $(cell).text parseFloat((quantity * item.max).toFixed(2))
 
             callback.call() if callback
 
