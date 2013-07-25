@@ -18,7 +18,7 @@
       , "name": "Thick Blue Ice"
       , "variant": true
       , "refines": [75,40,1,350,0,0,0]
-      , "by_volume": [0.07,0.04,0.001,0.35,0,0,0]
+      , "by_volume": [0.075,0.04,0.001,0.35,0,0,0]
     },{
         "id": 16262
       , "name": "Clear Icile"
@@ -29,17 +29,17 @@
       , "name": "Enriched Clear Icile"
       , "variant": true
       , "refines": [75,40,1,0,350,0,0]
-      , "by_volume": [0.07,0.04,0.001,0,0.35,0,0]
+      , "by_volume": [0.075,0.04,0.001,0,0.35,0,0]
     },{
         "id": 16267
       , "name": "Dark Glitter"
       , "refines": [500,1000,50,0,0,0,0]
-      , "by_volume": [0.05,1,0.05,0,0,0,0]
+      , "by_volume": [0.5,1,0.05,0,0,0,0]
     },{
         "id": 16268
       , "name": "Gelidus"
       , "refines": [250,500,75,0,0,0,0]
-      , "by_volume": [0.05,1,0.05,0,0,0,0]
+      , "by_volume": [0.025,1,0.075,0,0,0,0]
     },{
         "id": 16263
       , "name": "Glacial Mass"
@@ -50,12 +50,12 @@
       , "name": "Smooth Glacial Mass"
       , "variant": true
       , "refines": [75,40,1,0,0,300,0]
-      , "by_volume": [0.07,0.04,0,0,0,0.3,0]
+      , "by_volume": [0.075,0.04,0.001,0,0,0.3,0]
     },{
         "id": 16266
       , "name": "Glare Crust"
       , "refines": [1000,500,25,0,0,0,0]
-      , "by_volume": [1,0.5,0.025,0,0,0,0]
+      , "by_volume": [0.001,0.5,0.025,0,0,0,0]
     },{
         "id": 16269
       , "name": "Krystallos"
