@@ -55,7 +55,7 @@
         "id": 16266
       , "name": "Glare Crust"
       , "refines": [1000,500,25,0,0,0,0]
-      , "by_volume": [0.001,0.5,0.025,0,0,0,0]
+      , "by_volume": [1,0.5,0.025,0,0,0,0]
     },{
         "id": 16269
       , "name": "Krystallos"
@@ -71,7 +71,7 @@
       , "name": "Pristine White Glaze"
       , "variant": true
       , "refines": [75,40,1,0,0,0,350]
-      , "by_volume": [0.075,0.04,0.001,0,0,0,0.35]
+      , "by_volume": [0.075,0.04,1,0,0,0,0.35]
     }
   ]
 }
