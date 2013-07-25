@@ -2,20 +2,20 @@ start
   = log_line+
 
 log_line
-  = item:item count:count category:category weight:weight 
-  { return {"name": item, "count": count, "category": category, "weight": weight}; }
+  = item:item quantity:quantity category:category volume:volume 
+  { return {"name": item, "quantity": quantity, "category": category, "volume": volume}; }
 
 item
-  = item:[a-zA-Z' ']+ delimiter* { return item.join(''); }
+  = item:[a-zA-Z' ']+ delimiter* { return item.join('').replace(/\s+$/, ''); }
 
-count
-  = count:[0-9]+ delimiter+ { return parseFloat(count.join('')); }
+quantity
+  = quantity:[0-9]+ delimiter+ { return parseFloat(quantity.join('')); }
 
 category
   = category:[a-zA-Z' ']+ delimiter* { return category.join(''); }
 
-weight
-  = weight:[0-9\.]+ line_ending* { return parseFloat(weight.join('')); }
+volume
+  = volume:[0-9\.]+ line_ending* { return parseFloat(volume.join('')); }
 
 line_ending
   = " m3" delimiter? { return; }

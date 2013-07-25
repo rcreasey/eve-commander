@@ -1,7 +1,9 @@
 var express = require('express')
+  , expose = require('express-expose')
   , helpers = require('../app/helpers/helpers.js')
   , lessMiddleware = require('less-middleware')
   , fs = require('fs')
+
 
 module.exports = function (app, config) {
   app.set('showStackError', true)

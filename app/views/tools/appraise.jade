@@ -2,46 +2,91 @@ extends layout
 
 block context
   h3 Inventory Appraisal
+  p Your inventory has been broken down and priced against current market values:
+  strong Jita buy
 
   :coffeescript
     root = exports ? this
-    root.classify = (name) ->
-      return name.toLowerCase().replace(' ','-')
+    class Item
+      constructor: (@id, @name, @parent) ->
 
-    root.approximate = (number) ->
-      return parseFloat( number.toFixed(2) )
+      update_values: (volume, avg, max, min, stddev, median, percentile) ->
+        @volume = parseFloat(volume)
+        @avg = parseFloat(avg)
+        @max = parseFloat(max)
+        @min = parseFloat(min)
+        @stddev = parseFloat(stddev)
+        @median = parseFloat(median)
+        @percentile = parseFloat(percentile)
 
     $(document).ready ->
+      type_ids = $.map($('th[data-typeid]'), (item) ->
+        "typeid=" + $(item).attr('data-typeid')
+      ).join("&")
+
+      items = $.map($('th[data-typeid]'), (item) ->
+        new Item $(item).attr('data-typeid'), $(item).text(), $(item).parent('tr')
+      )
+
+      jita_url = "http://api.eve-central.com/api/marketstat?" + "regionlimit=10000002&" + type_ids
       $.ajax
         type: "GET"
-        url: "/data/inventory.json"
-        dataType: "json"
-        success: (data) ->
+        url: jita_url
+        dataType: "xml"
+        cache: true
+        success: (market_data) ->
+          $.each items, (index, item) ->
+            vol = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > volume").text()
+            avg = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > avg").text()
+            max = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > max").text()
+            min = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > min").text()
+            std = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > stddev").text()
+            med = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > median").text()
+            per = $(market_data).find("evec_api > marketstat > type#" + item.id + " > buy > percentile").text()
+            item.update_values(vol, avg, max, min, std, med, per)
+
+            quantity = parseFloat( item.parent.find('td.quantity').text() )
+            total = parseFloat( ( quantity * max ).toFixed(2) )
+
+            item.parent.append $('<td>').addClass('price buy max').text( max )
+            item.parent.append $('<td>').addClass('total').text( total )
+
           $('.loading').remove()
-          thead = $('thead tr')
-          $.each data.component_index, (i, component) ->
-            th = $('<th>').addClass( classify(component) )
-            th.text component
-            thead.append th
 
-          tbody = $('tbody')
-          $.each data.inventory, (i, item) ->
-            tr = $('<tr>')
-            tr.addClass('item-class')
-            tr.append $("<th>").text(item.name)
-            $.each item.refines, (i, refine) ->
-              td = $("<td>").addClass( classify(data.component_index[i]) ).text( approximate(refine) ) 
-              tr.append td
+          price_sum = 0.0
+          volume_sum = 0.0
+          $.each $('tbody tr'), (i, tr) ->
+            price_sum  += parseFloat( $(tr).find('td.total').text() )
+            volume_sum += parseFloat( $(tr).find('td.volume').text().replace(/\s+$/, '') )
 
-            tbody.append tr
+          $('tfoot tr.total').append $('<td>').addClass('total volume').html( parseFloat( volume_sum.toFixed(2) ) + ' m<sup>3</sup>' )
+          $('tfoot tr.total').append $('<td>').text( '' )
+          $('tfoot tr.total').append $('<td>').addClass('total price').text( parseFloat( price_sum.toFixed(2) ) )
 
-  table.table.table-condensed.table-ore
+
+  table.table.table-condensed.table-striped.table-appraisal
     thead
       tr
         th Item
+        th Quantity
+        th Volume
+        th Price
+        th Total
+
     tbody
       tr.loading
-        th(colspan=12)     
+        td(colspan=4)
           h4 
             i.icon-spinner.icon-spin.icon-large
-            | Calculating inventory appraisal...
+            | Appraising Inventory Market Value
+
+      each item in inventory
+        tr
+          th(data-typeId= item.id)= item.name
+          td.quantity= item.quantity
+          td.volume= item.volume + ' m'
+            sup 3
+
+    tfoot
+      tr.total
+        th(colspan=2) Total

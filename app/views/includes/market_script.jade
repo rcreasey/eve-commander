@@ -13,7 +13,7 @@
       @percentile = parseFloat(percentile)
 
   root.classify = (name) ->
-    return name.toLowerCase().replace(' ','-')
+    return name.toLowerCase().replace /\s+/g, '-'
 
   root.fetch_prices = (url, callback) ->
     $.ajax

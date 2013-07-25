@@ -41,14 +41,36 @@ thead {
 div.sell {
   font-weight: bold;
 }
+
 .table-ice tbody tr.ice-class td,.table-ice tbody tr.ice-class th,
 .table-ore tbody tr.ore-class td,.table-ore tbody tr.ore-class th {
   background-color: #f0f0f0;
 }
+
+.table-appraisal thead tr th,.table-appraisal tbody tr td,.table-appraisal tbody tr th,
 .table-ice thead tr th,.table-ice tbody tr td,.table-ice tbody tr th,
 .table-ore thead tr th,.table-ore tbody tr td,.table-ore tbody tr th {
   background-color: #f9f9f9;
   text-align: center;
+}
+
+.table-appraisal {
+  tr {
+    th:first-child {
+      text-align: left;
+    }
+  }
+  tfoot {
+    th, 
+    td {
+      background-color: #dff0d8;
+      color: #468847;
+      font-weight: bold;
+    }
+    td {
+      text-align: center;
+    }
+  }
 }
 .table-ice,
 .table-ore {
@@ -295,7 +317,7 @@ th.heavy-water {
 th.liquid-ozone {
   background: url("/images/51_64_11.png") top center no-repeat;
 }
-th.strontium {
+th.strontium-clathrates {
   background: url("/images/51_64_10.png") top center no-repeat;
 }
 th.helium-isotopes {

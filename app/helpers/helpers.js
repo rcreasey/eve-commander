@@ -34,5 +34,5 @@ function formatDatetime (date) {
 }
 
 function cssClassify (word) {
-  return word.toLowerCase.replace(' ','-')
+  return word.toLowerCase.replace(/\s+/g,'-')
 }
