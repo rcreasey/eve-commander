@@ -3,7 +3,7 @@ extends layout
 block context
   h3 Simple Reactions
   p This table shows the current market value of simple reactions.
-  
+
   include ../includes/market_script
   include table_script
 
@@ -33,25 +33,25 @@ block context
                 tr.append td
 
             td = $('<td>').addClass('reaction ' + classify(reaction.name)).text(reaction.name)
-            td.append $('<div>').addClass('batch').text( reaction.batch + ' units' )
+            td.append $('<div>').addClass('input').text( reaction.batch + ' units' )
             tr.append td
 
             tbody.append tr
 
-          fetch_prices '/data/moon-materials-raw.json', -> 
+          fetch_prices '/data/moon-materials-raw.json', ->
             fetch_prices '/data/moon-materials-intermediate.json', ->
               $('thead').append $('<th>').text('Market')
 
               $.each $('tbody tr'), (i, row) ->
                 buy = 0
                 $.each $(row).find('.component'), (i, component) ->
-                  buy += parseFloat( $(component).find('.avg').text())
+                  buy += parseFloat( $(component).find('.max').text())
 
-                sell = parseFloat($(row).find('.reaction .avg').text())
-                td = $('<td>').addClass('market') 
+                sell = parseFloat($(row).find('.reaction .max').text())
+                td = $('<td>').addClass('market')
                 delta = $('<i class="icon-4x pull-left">')
                 td.append delta
-    
+
                 profit = (sell - buy).toFixed(0)
                 td.append $('<span>').addClass('amount').text( profit )
                 td.append $('<div>').addClass('margin').text( ((profit / sell) * 100).toFixed(0) + '%')
@@ -72,7 +72,7 @@ block context
     tbody
       tr.loading.info
         td(colspan=3)
-          
-          h4 
+
+          h4
             i.icon-spinner.icon-spin.icon-large
             | Updating current prices...

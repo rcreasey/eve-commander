@@ -3,7 +3,7 @@ extends layout
 block context
   h3 #{title}
   p This chart shows the refined mineral average profit per 1m3 of an ore type.
-  
+
   include ../includes/market_script
   include table_script
 
@@ -32,14 +32,15 @@ block context
             tr.append $("<td>").text(ore.weight)
             $.each ore.by_volume, (i, volume) ->
               td = $("<td>").addClass( classify(data.component_index[i]) ).text(volume)
+              td.append $('<div>').addClass('input hide').text(volume + ' units')
               tr.append td
 
             tbody.append tr
-                    
-          fetch_prices '/data/minerals.json', ->        
+
+          fetch_prices '/data/minerals.json', ->
             find_optimal(data.component_index)
           add_icons()
-            
+
   table.table.table-condensed.table-ore
     thead
       tr
@@ -47,8 +48,8 @@ block context
 
     tbody
       tr.loading
-        th(colspan=12)     
-          h4 
+        th(colspan=12)
+          h4
             i.icon-spinner.icon-spin.icon-large
             | Calculating ore profit...
 

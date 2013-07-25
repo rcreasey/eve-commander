@@ -32,6 +32,7 @@ block context
             tr.append $("<td>").text(ice.weight)
             $.each ice.refines, (i, volume) ->
               td = $("<td>").addClass( classify(data.component_index[i]) ).text(volume)
+              td.append $('<div>').addClass('input hide').text(volume + ' units')
               tr.append td
 
             tbody.append tr
@@ -45,7 +46,7 @@ block context
               td = $('<td>').addClass('total')
               $(td).text(total.toFixed(2))
               $(row).append td
-          
+
             find_optimal(data.component_index.concat(['total']))
 
           add_icons()
@@ -58,8 +59,8 @@ block context
         th Ice
     tbody
       tr.loading
-        th    
-          h4 
+        th
+          h4
             i.icon-spinner.icon-spin.icon-large
             | Calculating ice yield...
 

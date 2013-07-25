@@ -15,7 +15,7 @@
   root.classify = (name) ->
     return name.toLowerCase().replace(' ','-')
 
-  root.fetch_prices = (url, callback) -> 
+  root.fetch_prices = (url, callback) ->
     $.ajax
       url: url
       dataType: 'json'
@@ -47,13 +47,10 @@
               item.update_values(vol, avg, max, min, std, med, per)
 
               $.each $('td.'+ classify(item.name)), (i, cell) ->
-                if $(cell).find('div.input').length
-                  alert('hai') if $(cell).hasClass('reaction')
-                  quantity =  parseFloat( (parseFloat($('div.input').text()) * item.max).toFixed(2) )
-                  $(cell).append $('<div>').addClass('buy max').text( quantity )
-                else
-                  quantity = parseFloat($(cell).text())
-                  $(cell).text parseFloat((quantity * item.max).toFixed(2))
+                quantity = parseFloat($(cell).find('div.input').text().replace(/units?/, ''))
+                gross = (quantity * item.max).toFixed(2)
+                $(cell).text('') if !$('table').hasClass('table-reactions')
+                $(cell).append $('<div>').addClass('buy max').text( gross )
 
             callback.call() if callback
 
