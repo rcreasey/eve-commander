@@ -1,5 +1,28 @@
-body {
-  font-size: 14px;
+#footer {
+    height: 60px;
+    background-color: #f5f5f5;
+}
+code {
+    font-size: 80%;
+}
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+    & > .container {
+        padding: 60px 15px 0;
+    }
+}
+
+html,body {
+    height: 100%;
+}
+.container {
+    .credit {
+        margin: 20px 0;
+    }
 }
 
 .loading {
@@ -93,7 +116,7 @@ div.sell {
   th.ice-icon,
   th.ore-icon {
     height: 70px;
-    width: 60px;
+    width: 70px;
   }
   tbody {
     tr.ice-class,
@@ -114,11 +137,18 @@ div.sell {
       th {
         font-weight: normal;
         text-align: left;
+        white-space: nowrap;
       }
     }
   }
 }
-
+.table-ice {
+  thead {
+    th {
+      height: 105px;
+    }
+  }
+}
 .table-reactions {
   tbody {
     td.reaction {
@@ -134,7 +164,6 @@ div.sell {
     td.market {
       text-align: center; 
       vertical-align: middle;
-      width: 125px;
 
       span, div {
         font-size: 1.15em;

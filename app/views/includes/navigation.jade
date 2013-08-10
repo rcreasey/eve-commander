@@ -1,46 +1,45 @@
 div.navbar.navbar-fixed-top
-  div.navbar-inner
-    div.container-fluid
-      a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.brand(href='/') EVE Commander
-      div.nav-collapse.collapse
-        ul.nav
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown') Ore
-              b.caret
-            ul.dropdown-menu
-              li
-                a(href='/ore/') Refines
-              li
-                a(href='/ore/volume') By Volume
-              li
-                a(href='/ore/profit') By Profit
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown') Ice
-              b.caret
-            ul.dropdown-menu
-              li
-                a(href='/ice/') Refines
-              li
-                a(href='/ice/profit') By Profit
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown') Reactions
-              b.caret
-            ul.dropdown-menu
-              li
-                a(href='/reactions/simple') Simple
-              li
-                a(href='/reactions/alchemy') Alchemy
-              li
-                a(href='/reactions/complex') Complex
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown') Tools
-              b.caret
-            ul.dropdown-menu
-              li
-                a(href='/tools/foreman') Mining Foreman
-              li
-                a(href='/tools/appraisal') Inventory Appraisal
+  div.container
+    button.navbar-toggle(type='button', data-toggle='collapse', data-toggle='.nav-collapse')
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand(href='/') EVE Industrialist
+    div.nav-collapse.collapse
+      ul.nav.navbar-nav
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown') Ore
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='/ore/') Refines
+            li
+              a(href='/ore/volume') By Volume
+            li
+              a(href='/ore/profit') By Profit
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown') Ice
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='/ice/') Refines
+            li
+              a(href='/ice/profit') By Profit
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown') Reactions
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='/reactions/simple') Simple
+            li
+              a(href='/reactions/alchemy') Alchemy
+            li
+              a(href='/reactions/complex') Complex
+        li.dropdown
+          a.dropdown-toggle(href='#', data-toggle='dropdown') Tools
+            b.caret
+          ul.dropdown-menu
+            li
+              a(href='/tools/foreman') Mining Foreman
+            li
+              a(href='/tools/appraisal') Inventory Appraisal

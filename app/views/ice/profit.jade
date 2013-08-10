@@ -16,8 +16,6 @@ block context
         success: (data) ->
           $('.loading').remove()
           thead = $('thead tr')
-          thead.append $("<th>").text("Batch")
-          thead.append $("<th>").text("Weight")
           $.each data.component_index, (i, component) ->
             th = $('<th>').addClass( classify(component) )
             th.text component
@@ -28,8 +26,6 @@ block context
             tr = $('<tr>')
             tr.addClass(if (ice.variant) then 'ice-variant' else 'ice-class')
             tr.append $("<th>").text(ice.name)
-            tr.append $("<td>").text(ice.batch)
-            tr.append $("<td>").text(ice.weight)
             $.each ice.refines, (i, volume) ->
               td = $("<td>").addClass( classify(data.component_index[i]) ).text(volume)
               td.append $('<div>').addClass('input hide').text(volume + ' units')
