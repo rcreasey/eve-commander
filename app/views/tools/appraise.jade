@@ -20,6 +20,12 @@ block context
         @percentile = parseFloat(percentile)
 
     $(document).ready ->
+      format_values = ->
+        $.each $('tbody td, tfoot td'), (i, td) ->
+          values = $(td).text().replace /([\d\.]+)/g, (a, b) ->
+            accounting.formatNumber( b )
+          $(td).text( values )
+
       type_ids = $.map($('th[data-typeid]'), (item) ->
         "typeid=" + $(item).attr('data-typeid')
       ).join("&")
@@ -59,10 +65,14 @@ block context
             price_sum  += parseFloat( $(tr).find('td.total').text() )
             volume_sum += parseFloat( $(tr).find('td.volume').text().replace(/\s+$/, '') )
 
-          $('tfoot tr.total').append $('<td>').addClass('total volume').html( parseFloat( volume_sum.toFixed(2) ) + ' m<sup>3</sup>' )
+          $('tfoot tr.total').append $('<td>').addClass('total volume').html( volume_sum.toFixed(2) )
           $('tfoot tr.total').append $('<td>').text( '' )
-          $('tfoot tr.total').append $('<td>').addClass('total price').text( parseFloat( price_sum.toFixed(2) ) )
+          $('tfoot tr.total').append $('<td>').addClass('total price').text( price_sum.toFixed(2) )
 
+          $.each $('tbody td.total'), (i, td) ->
+            $(td).text( $(td).text() )
+
+          format_values()
 
   table.table.table-condensed.table-striped.table-appraisal
     thead
@@ -84,8 +94,7 @@ block context
         tr
           th(data-typeId= item.id)= item.name
           td.quantity= item.quantity
-          td.volume= item.volume + ' m'
-            sup 3
+          td.volume= item.volume
 
     tfoot
       tr.total

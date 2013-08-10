@@ -22,7 +22,8 @@
     "async": "0.2.8",
     "underscore": "1.4.x",
     "moment": "2.0.x",
-    "pegjs": "0.7.x"
+    "pegjs": "0.7.x",
+    "humanize": "0.0.x"
   },
   "devDependencies": {
     "nodemon": "0.7.x",

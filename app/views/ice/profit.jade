@@ -40,11 +40,12 @@ block context
               $.each $(row).find('td'), (i, td) ->
                 total += parseFloat($(td).text()) if $(td).text() != ""
               td = $('<td>').addClass('total')
-              $(td).text(total.toFixed(2))
+              $(td).text( total.toFixed(2) )
               $(row).append td
 
             find_optimal(data.component_index.concat(['total']))
-
+            format_values()
+              
           add_icons()
 
 

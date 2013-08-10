@@ -1,6 +1,6 @@
 var url = require('url')
   , qs = require('querystring')
-  , moment = require('moment')
+  , humanize = require('humanize')
 
 function helpers () {
   return function (req, res, next) {
@@ -8,9 +8,8 @@ function helpers () {
     res.locals.isActive = function (link) {
       return req.url.indexOf(link) !== -1 ? 'active' : ''
     }
+    res.locals.formatNumber = formatNumber
     res.locals.formatDatetime = formatDatetime
-    res.locals.datetimeFormatString = datetimeFormatString
-    res.locals.moment = moment
 
     if (typeof req.flash !== 'undefined') {
       res.locals.info = req.flash('info')
@@ -25,14 +24,10 @@ function helpers () {
 
 module.exports = helpers
 
-function datetimeFormatString () {
-  return 'MM/DD/YY HH:mm'
+function formatNumber (number) {
+  return humanize.numberFormat(number)
 }
 
 function formatDatetime (date) {
-  return moment(date).format(datetimeFormatString());
-}
-
-function cssClassify (word) {
-  return word.toLowerCase.replace(/\s+/g,'-')
+  return humanize.date('MM/DD/YY HH:mm', date)
 }

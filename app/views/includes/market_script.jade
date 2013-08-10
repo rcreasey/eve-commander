@@ -15,6 +15,12 @@
   root.classify = (name) ->
     return name.toLowerCase().replace /\s+/g, '-'
 
+  root.format_values = ->
+    $.each $('tbody td'), (i, td) ->
+      values = $(td).text().replace /([\d\.]+)/g, (a, b) ->
+        accounting.formatNumber( b )
+      $(td).text( values )
+
   root.fetch_prices = (url, callback) ->
     $.ajax
       url: url
@@ -51,6 +57,8 @@
                 gross = (quantity * item.max).toFixed(2)
                 $(cell).text('') if !$('table').hasClass('table-reactions')
                 $(cell).append $('<div>').addClass('buy max').text( gross )
+
+              $('thead th:gt(1)').width(100)
 
             callback.call() if callback
 
