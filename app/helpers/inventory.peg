@@ -1,24 +1,29 @@
 start
-  = log_line+
+  = inventory_line+
 
-log_line
-  = item:item quantity:quantity category:category volume:volume 
-  { return {"name": item, "quantity": quantity, "category": category, "volume": volume}; }
+inventory_line
+  = name:name quantity:quantity category:category+ volume:volume* line_ending?
+  { return { "name": name.join('').replace(/\s+$/,''), 
+             "quantity": parseFloat(quantity), 
+             "category": category.join('').replace(/,/g,''), 
+             "volume": parseFloat(volume)
+           };
+  }
 
-item
-  = item:[a-zA-Z' ']+ delimiter* { return item.join('').replace(/\s+$/, ''); }
+name
+  = name:[a-zA-Z' ']+ delimiter* { return name; }
 
 quantity
-  = quantity:[0-9]+ delimiter+ { return parseFloat(quantity.join('')); }
+  = quantity:[0-9\.\,]+ delimiter+ { return quantity.join('').replace(/,/g,''); }
 
 category
-  = category:[a-zA-Z' ']+ delimiter* { return category.join(''); }
+  = category:[a-zA-Z' ']+ delimiter* { return category; }
 
 volume
-  = volume:[0-9\.]+ line_ending* { return parseFloat(volume.join('')); }
+  = volume:[0-9\.\,]+ " m3"? { return volume.join('').replace(/,/g,''); }
 
 line_ending
-  = " m3" delimiter? { return; }
+  = [\r\n]+ { return; }
 
 delimiter
-  = [\t\r\n]+
+  = [\t]+

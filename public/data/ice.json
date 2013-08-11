@@ -71,7 +71,7 @@
       , "name": "Pristine White Glaze"
       , "variant": true
       , "refines": [75,40,1,0,0,0,350]
-      , "by_volume": [0.075,0.04,1,0,0,0,0.35]
+      , "by_volume": [0.075,0.04,0.001,0,0,0,0.35]
     }
   ]
 }

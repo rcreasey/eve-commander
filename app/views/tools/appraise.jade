@@ -1,9 +1,12 @@
 extends layout
 
+mixin item_image(id)
+  a.pull-left(href='http://eve-central.com/home/quicklook.html?typeid=#{id}')
+    img.media-object(src='http://image.eveonline.com/Type/#{id}_32.png')
+
 block context
   h3 Inventory Appraisal
   p Your inventory has been broken down and priced against current market values:
-  strong Jita buy
 
   :coffeescript
     root = exports ? this
@@ -21,6 +24,9 @@ block context
 
     $(document).ready ->
       format_values = ->
+        $.extend accounting.settings.number,
+          precision: 2
+
         $.each $('tbody td, tfoot td'), (i, td) ->
           values = $(td).text().replace /([\d\.]+)/g, (a, b) ->
             accounting.formatNumber( b )
@@ -74,6 +80,18 @@ block context
 
           format_values()
 
+  if (unparsed.length)
+    #unparsed.alert.alert-danger
+      button.close(type='button', data-dismiss='alert') x
+      h4 Crap!  We had a hard time reading some of your inventory:
+      dl
+        each line in unparsed
+          dt
+            = line.error
+            = ' (Around character ' + line.error.column + ')'
+          dd
+            = line.line
+
   table.table.table-condensed.table-striped.table-appraisal
     thead
       tr
@@ -85,17 +103,29 @@ block context
 
     tbody
       tr.loading
-        td(colspan=4)
+        td(colspan=5)
           h4 
             i.icon-spinner.icon-spin.icon-large
-            | Appraising Inventory Market Value
+            |  Appraising Inventory Market Value
 
       each item in inventory
         tr
-          th(data-typeId= item.id)= item.name
+          th(data-typeId= item.id)
+            .media
+              +item_image(item.id)
+              .media-body
+                a(href='http://games.chruker.dk/eve_online/item.php?type_id=#{item.id}')= item.name
+                if item.parent.length
+                  small.clearfix.text-muted= item.parent.join(', ')
+
           td.quantity= item.quantity
           td.volume= item.volume
 
     tfoot
       tr.total
         th(colspan=2) Total
+
+  //- #inventory
+  //-   pre= JSON.stringify(inventory)
+  //- #unparsed
+  //-   pre= JSON.stringify(unparsed)

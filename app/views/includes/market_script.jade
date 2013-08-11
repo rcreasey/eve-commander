@@ -16,6 +16,9 @@
     return name.toLowerCase().replace /\s+/g, '-'
 
   root.format_values = ->
+    $.extend accounting.settings.number,
+      precision: 2
+
     $.each $('tbody td'), (i, td) ->
       values = $(td).text().replace /([\d\.]+)/g, (a, b) ->
         accounting.formatNumber( b )

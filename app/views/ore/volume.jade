@@ -4,7 +4,6 @@ block context
   h3 #{title}
   p This chart shows the refining amount of each mineral in 1 m3 of an ore type.
   
-  include ../includes/market_script
   include table_script
 
   :coffeescript
@@ -37,6 +36,7 @@ block context
             tbody.append tr
           
           find_optimal(data.component_index)
+          format_values()
           add_icons()
 
   table.table.table-condensed.table-ore
