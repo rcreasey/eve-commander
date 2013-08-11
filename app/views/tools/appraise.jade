@@ -115,7 +115,7 @@ block context
               +item_image(item.id)
               .media-body
                 a(href='http://games.chruker.dk/eve_online/item.php?type_id=#{item.id}')= item.name
-                if item.parent.length
+                if item.parent
                   small.clearfix.text-muted= item.parent.join(', ')
 
           td.quantity= item.quantity

@@ -52,7 +52,7 @@ exports.appraise = function (req, res) {
       collection[ item.name ] = item;
     }
   }
-  
+
   var parsed_items = new Array();
   var unparsed  = new Array()
   if (req.body.inventory) {
@@ -72,6 +72,10 @@ exports.appraise = function (req, res) {
       try {
         var i = types[item.name.toLowerCase()];
 
+        if ( ! item.volume ) {
+          item.volume = i.volume * item.quantity;
+        }
+        
         ice_refine = findByName( ice_data.ices, i.name );
         ore_refine = findByName( ore_data.ores, i.name );
 
