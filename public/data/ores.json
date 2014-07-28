@@ -252,8 +252,8 @@
       , "name": "Sharp Crokite"
       , "batch": 100
       , "weight": 16
-      , "refines": [22041,0,0,290,385,0]
-      , "by_volume": [13.12,0,0,0,0.17,0,0.23,0]
+      , "refines": [22041,0,0,0,290,0,385,0]
+      , "by_volume": [13.78,0,0,0,0.18,0,0.24,0]
     }, {
         "id": 17433
       , "name": "Crystalline Crokite"
